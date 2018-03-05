@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 90%;
+  margin: 0 auto;
+  font-family: 'Spectral SC', serif;
+  background-image: url(paper.jpg);
+  background-attachment: fixed;
+}
+
+
+.divider {
+  width: 100%;
+  background-color: black;
+  height: 5px;
+  border-radius: 10px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h1 {
+  padding: 5px;
+  font-size: 70px;
+}
+
+#headline {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 500px;
+  margin-bottom: 20px;
+}
+
+img {
+  float: left;
+  width: 450px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+
+.row {
+  margin-top: 25px;
+  padding-bottom: 40px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  height: 685px;
+  border-left: solid 1px black;
+  border-right: solid 1px black;
+  overflow: scroll;
+}
+
+.column>p {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+figcaption {
+  font-style: italic;
+}

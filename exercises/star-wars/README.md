@@ -1,4 +1,4 @@
-#CSS Wars: The Selector Awakens
+# CSS Wars: The Selector Awakens
 12 APRIL 2016 on Exercise, Static Websites, Level 1
 In this exercise you will use several css selectors to restyle elements of this page. The HTML base is already written for you and is found below for you to copy into your project.
 

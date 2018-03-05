@@ -1,4 +1,4 @@
-#Strunctions
+# Strunctions
 28 AUGUST 2017
 "It's like a function but for strings!" - Dan Hitt
 

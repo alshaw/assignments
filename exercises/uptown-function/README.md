@@ -1,4 +1,4 @@
-#Uptown function you up
+# Uptown function you up
 14 JULY 2015 on JavaScript, Warmup, Problem Solving, Programming Principles, Level 2
 You will create three functions.
 

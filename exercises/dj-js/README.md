@@ -1,4 +1,4 @@
-#DJ JS
+# DJ JS
 26 APRIL 2016 on Exercise, Static Websites, Level 3
 You're starting your business as a strictly online DJ (DJ JS) and you want to start by creating a website where people can change the color of a square on the page by interacting with different HTML Events.
 

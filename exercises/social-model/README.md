@@ -1,4 +1,4 @@
-#Social.js
+# Social.js
 03 MAY 2016 on Exercise
 Create a model to represent the database of a new social media platform you're creating. It can be about whatever you want, but it needs the following:
 

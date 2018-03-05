@@ -1,4 +1,4 @@
-#Newsies
+# Newsies
 12 APRIL 2016 on Exercise, Static Websites, Level 1
 You are going to recreate the front page of a newspaper using block, inline and inline-block elements
 

@@ -1,14 +1,14 @@
-#If Statement Olympics
+# If Statement Olympics
 18 OCTOBER 2017
 The exercise will get progressively harder and hard. You at least should get one medal, but feel free to go the extra mile!
 
 Also, feel free to practice using ternary statements for extra credit too!
 
-##Preliminaries
+## Preliminaries
 Write an if statement that prints "is greater than" if 5 is greater than 3
 Write an if statement that prints "is the length" if the length of "cat" is 3
 Write an if/else statement that checks if "cat" is equal to "dog" and prints, "not the same" when they are not equal.
-##Bronze Medal
+## Bronze Medal
 Write an if statement that prints <theNameOfThePerson> + is allowed to go to the movie if they are old enough, and the opposite if they are not older than 18.
 var person = {  
   name: "Bobby",
@@ -16,14 +16,14 @@ var person = {
 }
 Using that same object, only allow them into the movie if their name starts with "B"
 Using that same object, only allow them into the movie if their name starts with "B" and they are older than 18.
-##Silver Medal
+## Silver Medal
 Write an if/else if/else statement that prints "strict" if 1 strictly equals "1", prints "loose" or "abstract" if 1 equals "1" without type checking, and prints "not equal at all" if it doesn't print the other stuff.
 Write an if statement that prints "yes" if 1 is less than or equal to 2 and 2 is equal to 4
 OR!!!
 
 3 * 4 is greater than 10 and 5 plus 10 is greater than 10.
 
-##Gold Medal
+## Gold Medal
 Gold may take some googling! 
 1. Write an if statement that checks to see if "dog" is a string 
 2. Write an if statement that checks to see if "true" is a boolean 

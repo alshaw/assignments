@@ -78,9 +78,18 @@
 
 // console.log(frequentLetters("Hai hai hihihihi"));
 
-/////////////////////////////////////
+////////////////////////////////////
 
+// function addToPage(x, y) {
+//   document.getElementById('results').innerHTML += add(1, 2)
+// }
 
+// var z = 45
 
+// addToPage(4);
 
-  
+// function add(y) {
+//   z = 2
+//   return x + y
+// }
+

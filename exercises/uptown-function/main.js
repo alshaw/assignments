@@ -8,4 +8,21 @@ var lyrics = ["This", "hit", "that", "ice", "cold",
   "with", "Saint", "Laurent", "Gotta", "kiss",
   "myself", "I'm", "so", "pretty"];
 
-console.log(lyrics.join(' '));
+
+function prettyLyrics(arr) {
+  return arr.join(' ');
+}
+console.log(prettyLyrics(lyricsArr));
+
+function reverseLyrics(arr) {
+  return arr.reverse().join(" ");
+}
+console.log(reverseLyrics());
+
+function everyOther(arr) {
+  var skip = []; 
+  for (var i = 0; i < arr.length; i += 2) {
+    skip[push(arr[i])];
+  }
+  prettyLyrics(skip);
+}

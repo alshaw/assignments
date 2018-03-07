@@ -18,10 +18,43 @@
 /////////////////////////////
 // For Loops
 
-var dinnerOptions = ["spaghetti", "fried rice", "burritos"]
+// var dinnerOptions = ["spaghetti", "fried rice", "burritos"]
 
-for (var i = 0; i < dinnerOptions.length; i += 2) {
-  console.log(dinnerOptions[i]);
-}
+// for (var i = 0; i < dinnerOptions.length; i += 2) {
+//   console.log(dinnerOptions[i]);
+// }
 
 //////////////////////////////////
+
+//Event Listeners
+
+// var button1 = document.getElementById('button1');
+
+// button1.addEventListener('click', colorChange)
+
+// function colorChange(e) {
+//   if (button1.style.backgrounColor == 'red') {
+//       button1.style.backgrounColor = 'red'
+//   } else {
+//     (button1.style.backgrounColor = 'white');
+//    }
+// }
+
+// 
+
+
+var button = document.getElementById("submit");
+var input = document.getElementById("input");
+var p = document.getElementById("output");
+
+
+form.addEventListener("submit", function(event) {
+  e.preventDefault();
+  var input = event.target.children[0];
+  if(input.value.length < 6) {
+    alert("Username must containg at least 6 characters.")
+  } else {
+    p.innerHTML = input.value;
+    input = "";
+  }
+});

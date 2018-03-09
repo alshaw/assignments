@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>ShAIRLines</title>
+</head>
+
+<body>
+  <h1>ShairLines</h1>
+  <form id="submit" name="login">
+    <h3>Pay half the price to share your seat with another passenger!</h3>
+    <input id="firstName" name="firstName" type="text" placeholder="Enter First Name">
+    <input id="lastName" name="lastName" type="text" placeholder="Enter Last Name">
+    <h3>Gender</h3>
+    <!-- radio -->
+    <label for="female">Female
+      <input name="gender" id="female" type="radio">
+    </label>
+    <label for="male">Male
+      <input name="gender" id="male" type="radio">
+    </label>
+    <label for="other">Other
+      <input name="gender" id="other" type="radio">
+    </label>
+    <h3>Age</h3>
+    <input id="age"type="number" placeholder="Enter Age">
+    <h3>Dietary Restrictions</h3>
+    <label for="vegaterian">Vegetarian:
+      <input name="vegetarian" id="vegetarian" type="checkbox">
+    </label>
+    <label for="kosher">Kosher:
+      <input name="kosher" id="kosher" type="checkbox">
+    </label>
+    <label for="lactose">Lactose Free:
+      <input name="lactose" id="lactose" type="checkbox">
+    </label>
+    <label for="gluten">Gluten Free:
+      <input name="gluten" id="gluten" type="checkbox">
+    </label>
+    <label for="arugula">I only eat organic arugula grown in an aquaponic farm:
+      <input name="arugula" id="arugula" type="checkbox">
+    </label>
+    <!-- select -->
+    <h3>Where would you like to travel to?</h3>
+    <select name="destination" id="destination" value="none">
+      <option value="none">Pick a Destination</option>
+      <option value="mississippi">Mississippi</option>
+      <option value="germany">Germany</option>
+      <option value="iceland">Iceland</option>
+      <option value="france">France</option>
+    </select>
+    <button>Submit</button>
+    <p id="output"></p>
+  </form>
+  <script src="./script.js"></script>
+</body>
+
+</html>

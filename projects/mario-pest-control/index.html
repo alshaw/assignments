@@ -1,0 +1,83 @@
+<!-- enter number of baddies in an input field that changes the price 
+baddie image
+A list displaying each baddie by type. 
+Each list item must: 
+   Have baddie image Have baddie name Show price of that baddie
+   Have an input box to enter the total caught of that type
+   A total price at the bottom that adds sums the total cost of baddies caught (must use Javascript for this math - no hard coded values) 
+   A footer showing: Mario's email address Mario's company website url 
+   Mario's physical address 
+   A large title at the top of the page entitled "Mario Pest Controllo -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="styles.css">
+  <title>Mario Pest Control</title>
+</head>
+
+<body>
+  <div id="body">
+    <header class="header">
+      <h1>Mario Pest Control</h1>
+    </header>
+    <ul id="baddies-container">
+      <li class="baddies">
+        <img class="goomba" src="images/mario-goomba.png" alt="Goomba">
+        <h2>Goombas</h2>
+        <p>5 coins</p>
+        <p>Total Caught:
+          <input type="number" id="goombaInput">
+        </p>
+        <br>
+        <p>Price:
+          <br>
+          <span id="goombaTotal"></span>
+        </p>
+      </li>
+      <li class="baddies">
+        <img src="images/mario-bobomb.png" alt="Bob-omb">
+        <h2>Bob-ombs</h2>
+        <p>7 coins</p>
+        <p>Total Caught:
+          <input id="bobombInput" type="number">
+        </p>
+        <br>
+        <p>Price:
+          <br>
+          <span id="bobombTotal"></span>
+        </p>
+      </li>
+      <li class="baddies">
+        <img src="images/mario-cheepcheep.png" alt="Cheep-cheep">
+        <h2>Cheep-cheeps</h2>
+        <p>11 coins</p>
+        <p>Total Caught:
+          <input id="cheepInput" type="number">
+        </p>
+        <br>
+        <p>Price:
+          <br>
+          <span id="cheepTotal"></span>
+        </p>
+      </li>
+    </ul>
+    <h2 id="totals">The total price for the total number of baddies caught:
+      <br>
+      <span id="subtotal"></span>
+    </h2>
+    <footer>
+      <ul id="footer">
+        <li class="mario">mario@cart.com</li>
+        <li class="mario">123 Mario Lane, San Diego, CA 92101</li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

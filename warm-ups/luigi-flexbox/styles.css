@@ -1,0 +1,102 @@
+@font-face{
+  font-family: 'Super Mario 256';
+  src: url(fonts/SuperMario256.ttf);
+}
+
+*{
+}
+
+.header{
+  font-family: 'Super Mario 256';
+  background-color: #FBDA4B;
+  display: flex;
+  align-content: space-around;
+  flex: .30;
+}
+
+main{
+  display: flex;
+  flex: .35;
+
+}
+
+.banner{
+  background-color: #D93930;
+  display: flex;
+  justify-content: center;
+  flex: 35;
+}
+
+h1{
+  font-family: 'Super Mario 256';
+  font-size: 65px;
+  color: #D93930;
+
+}
+
+h2{
+  font-family: 'Super Mario 256';
+  font-size: 45px;
+}
+
+h2,
+p{
+  text-align: center;
+  color: #D93930;
+}
+
+footer{
+  background-color: #FBDA4B;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: .15;
+}
+
+.img{
+  width: 70%;
+  height: 70%;
+}
+
+.mushroom{
+  width: 20%;
+  height: 10%;
+  display: flex;
+}
+
+/*Responsive */
+@media (min-width: 600px) {
+  h1 {
+    color: #D93930;
+  }
+  .img1 {
+    width: 50%;
+    height: auto;
+  }
+  .img2 {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .img1 {
+    width: 80%;
+    height: auto;
+  }
+  .img2 {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1800px) {
+  .img1 {
+    width: 80%;
+    height: auto;
+  }
+  .img2 {
+    width: 90%;
+    height: auto;
+  }
+}

@@ -1,11 +1,11 @@
 //Pricing
 var goombaPrice = 5;
-var bobOmbPrice = 7; 
+var bobombPrice = 7; 
 var cheepCheepPrice = 11;
 
 //Totals
 goombaTotal = document.getElementById('goombaTotal')
-bobOmbTotal = document.getElementById('bobOmbTotal')
+bobombTotal = document.getElementById('bobombTotal')
 cheepCheepTotal = document.getElementById('cheepCheepTotal')
 
 var multiply = function (price, quantity) {
@@ -15,41 +15,40 @@ var multiply = function (price, quantity) {
 var totalSum = function () {
   var goombaInput = document.getElementById('goombaInput').value;
   var bobombInput = document.getElementById('bobombInput').value;
-  var cheepInput = document.getElementById('cheepInput').value;
-  return multiply(goombaPrice, goombaInput) + multiply(bobombPrice, bobombInput) + multiply(cheepCheepPrice, cheepInput);
+  var cheepCheepInput = document.getElementById('cheepCheepInput').value;
+  return multiply(goombaPrice, goombaInput) + multiply(bobombPrice, bobombInput) + multiply(cheepCheepPrice, cheepCheepInput);
 }
 
 var total = function () {
   var subtotal = document.getElementById('subtotal');
-  subtotal.innerHTML = " " + totalSum() + "!";
-  subtotal.style.color = "white";
+  subtotal.innerHTML = " " + totalSum();
 }
 
 var output = function (inputType, price, totalType) {
   inputType = +inputType;
   totalType.innerHTML = inputType * price;
-  totalType.style.color = 'white';
+  // totalType.style.color = 'white';
 }
 
 window.oninput = function () {
   // Inputs Type
   var goombaInput = document.getElementById('goombaInput').value;
   var bobombInput = document.getElementById('bobombInput').value;
-  var cheepInput = document.getElementById('cheepInput').value;
-  if (goombaInput !== '') {
+  var cheepCheepInput = document.getElementById('cheepCheepInput').value;
+  if (goombaInput !== '0') {
     output(goombaInput, goombaPrice, goombaTotal);
   } else {
     goombaTotal.innerHTML = '';
   }
-  if (bobombInput !== '') {
+  if (bobombInput !== '0') {
     output(bobombInput, bobombPrice, bobombTotal);
   } else {
     bobombTotal.innerHTML = '';
   }
-  if (cheepInput !== '') {
-    output(cheepInput, cheepCheepPrice, cheepTotal);
+  if (cheepCheepInput !== '0') {
+    output(cheepCheepInput, cheepCheepPrice, cheepCheepTotal);
   } else {
-    cheepTotal.innerHTML = '';
+    cheepCheepTotal.innerHTML = '';
   }
 
   total();

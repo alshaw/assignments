@@ -1,36 +1,41 @@
-//Pricing
-var goombaPrice = 5;
-var bobombPrice = 7; 
-var cheepCheepPrice = 11;
-
 //Totals
 goombaTotal = document.getElementById('goombaTotal')
 bobombTotal = document.getElementById('bobombTotal')
 cheepCheepTotal = document.getElementById('cheepCheepTotal')
 
-var multiply = function (price, quantity) {
-  return price * quantity;
+//Pricing
+var goombaPrice = 5;
+var bobombPrice = 7;
+var cheepCheepPrice = 11;
+
+
+//multiply price and amount of baddies
+function multiply (price, amount) {
+  return price * amount;
 }
 
-var totalSum = function () {
+//get total sum of all baddies
+function totalSum () {
   var goombaInput = document.getElementById('goombaInput').value;
   var bobombInput = document.getElementById('bobombInput').value;
   var cheepCheepInput = document.getElementById('cheepCheepInput').value;
   return multiply(goombaPrice, goombaInput) + multiply(bobombPrice, bobombInput) + multiply(cheepCheepPrice, cheepCheepInput);
 }
 
-var total = function () {
-  var subtotal = document.getElementById('subtotal');
-  subtotal.innerHTML = " " + totalSum();
-}
-
-var output = function (inputType, price, totalType) {
+// display baddie amount
+function output(inputType, price, totalType) {
   inputType = +inputType;
   totalType.innerHTML = inputType * price;
 }
 
+// display grand total
+function total () {
+  var subtotal = document.getElementById('subtotal');
+  subtotal.innerHTML = " " + totalSum();
+}
+
+//oninput occurs when an element gets user input
 window.oninput = function () {
-  // Input Type
   var goombaInput = document.getElementById('goombaInput').value;
   var bobombInput = document.getElementById('bobombInput').value;
   var cheepCheepInput = document.getElementById('cheepCheepInput').value;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <div id="operations">
+    <h2>Addition</h2>
+    <input class="inputs" id="firstNumAdd" placeholder="First Number" type="text">
+    <input class="inputs" id="secondNumAdd" placeholder="Second Number" type="text">
+    <button class="inputs" type="submit" onclick="add()">Answer</button>
+    <p id="additionSum"></p>
+  </div>
+  <div id="operations">
+    <h2>Subtraction</h2>
+    <input class="inputs" id="firstNumSub" placeholder="First Number" type="text">
+    <input class="inputs" id="secondNumSub" placeholder="Second Number" type="text">
+    <button class="inputs" type="submit" onclick="sub()">Answer</button>
+    <p id="subtractionSum"></p>
+  </div>
+  <div id="operations">
+    <h2>Multiplication</h2>
+    <input class="inputs" id="firstNumMul" placeholder="First Number" type="text">
+    <input class="inputs" id="secondNumMul" placeholder="Second Number" type="text">
+    <button class="inputs" type="submit" onclick="mul()">Answer</button>
+    <p id="multiplyProduct"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

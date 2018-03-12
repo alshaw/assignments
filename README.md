@@ -1,4 +1,5 @@
 # VSchool
 
-This is my VSchool assignments folder.
+VSchool folder where I keep projects, 
+exercise and warm-ups assigned in class.
 

@@ -6,4 +6,3 @@ let removeA = function(str) {
 
 }
 Hint: String methods
-

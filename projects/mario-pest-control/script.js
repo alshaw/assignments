@@ -27,11 +27,10 @@ var total = function () {
 var output = function (inputType, price, totalType) {
   inputType = +inputType;
   totalType.innerHTML = inputType * price;
-  // totalType.style.color = 'white';
 }
 
 window.oninput = function () {
-  // Inputs Type
+  // Input Type
   var goombaInput = document.getElementById('goombaInput').value;
   var bobombInput = document.getElementById('bobombInput').value;
   var cheepCheepInput = document.getElementById('cheepCheepInput').value;

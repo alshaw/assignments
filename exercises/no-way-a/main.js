@@ -1,5 +1,5 @@
-var replace = function (str) {
-  return str.replace("a", "");
+function replace (str) {
+  return str.replace(/a/gi, "");
 };
 
-console.log(replace("Whats up"));
+console.log(replace("Whats up Allie"));

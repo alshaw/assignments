@@ -25,7 +25,6 @@
 // }
 
 //////////////////////////////////
-
 //Event Listeners
 
 // var button1 = document.getElementById('button1');
@@ -40,21 +39,64 @@
 //    }
 // }
 
-// 
+//////////////////////////////////////
 
 
-var button = document.getElementById("submit");
-var input = document.getElementById("input");
-var p = document.getElementById("output");
+// var button = document.getElementById("submit");
+// var input = document.getElementById("input");
+// var p = document.getElementById("output");
 
 
-form.addEventListener("submit", function(event) {
-  e.preventDefault();
-  var input = event.target.children[0];
-  if(input.value.length < 6) {
-    alert("Username must containg at least 6 characters.")
-  } else {
-    p.innerHTML = input.value;
-    input = "";
-  }
-});
+// form.addEventListener("submit", function(event) {
+//   e.preventDefault();
+//   var input = event.target.children[0];
+//   if(input.value.length < 6) {
+//     alert("Username must containg at least 6 characters.")
+//   } else {
+//     p.innerHTML = input.value;
+//     input = "";
+//   }
+// });
+
+//////////////////////////////////////////////////
+//A function is a stored procedure
+// There are two parts to a procedure
+
+// two parts: 
+// 1) definition
+//    define all the necessary steps and 'ingredients'
+// 2) execution
+//    perform the procedure when called upon
+
+function sum(parameter1, parameter2) {
+  return parameter1 + parameter2;
+}
+
+function isEven(num) {
+  //check if number can be divided by 2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

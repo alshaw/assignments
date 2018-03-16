@@ -1,0 +1,38 @@
+{
+  "appetizers": [
+  {
+    "name": "Pickles",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": ["sea salt and vinegar", "spicy"]
+  },
+  {
+    "name": "Chips",
+    "description": "Home made and fresh!",
+    "ingredients": ["sea salt and vinegar", "bbq", "sriracha"]
+  }],
+  "coldSandwiches": [{
+    "name": "Turkey Avocado",
+    "description": "",
+    "ingredients": ["Wheat bread", "lettuce", "avocado"]
+  },
+  {
+    "name": "Tuna",
+    "description": "Wild caught Albacore tuna",
+    "ingredients": ["Albacore", "Sprouts", "pickles"]
+  },
+  {
+    "name": "Veggie Cheesesteak",
+    "description": "Vegan friendly!",
+    "ingredients": ["Cauliflower", "Cashew cheese", "Homemade sauce"]
+  },
+  {
+    "name": "Tuna",
+    "description": "Wild caught Albacore tuna",
+    "ingredients": ["Albacore", "Sprouts", "pickles"]
+  }
+],
+  "hotSandwiches": [{
+
+  }]
+
+}

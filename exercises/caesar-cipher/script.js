@@ -1,9 +1,19 @@
-var readline = require('readline-sync');
-var input = readline.question('What phrase would you like to encrypt? ').toLowerCase();
-var shift = parseInt(readline.question('How many letters would you like to shift? '));
+rs = require("readline-sync")
 
-//receive two inputs from user
-  // 1) The text to be encoded
-  // 2) the number position to shift each letter (to the right)
+function cipher(str, shift) {
+  let output = "";
+  for (let i = 0; i < str.length; i++) {
+    shift = shift % 26
+    if (str.charCodeAt(i) + shift > 122) {
+      output += String.fromCharCode((str.charCodeAt(i) + shift - 26));
+    } else {
+      output += String.fromCharCode((str.charCodeAt(i) + shift));
+    }
+  }
+  return output
+}
 
-// only shift letters, no characters.
+let string = rs.question("What would you like to encode? ");
+let shiftStr = rs.question("Enter your favorite number. ")
+let shift = Number(shiftStr)
+console.log("Encoded: " + cipher(string, shift));

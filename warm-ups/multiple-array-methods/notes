@@ -1,0 +1,5 @@
+var ages = [1, 2, 3, 4];
+
+ages.filter(function (num)) {
+  return num > 2;
+}).sort()

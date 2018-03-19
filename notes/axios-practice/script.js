@@ -48,6 +48,13 @@ form.addEventListener("submit", function(e){
     })
 })
 
+//var button = document.createElement("button")
+//button.innerText = "X";
+
+//button.addEventListener("click", function(e) {
+    
+//})
+
 
 
 

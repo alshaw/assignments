@@ -1,0 +1,8 @@
+test suite - describe
+unit test assertion (multiples)
+
+if all the unit tests pass then the whole test suite passes.
+it block should read like english 
+it("should do something")
+
+testing library called jest(best testing framework for React)

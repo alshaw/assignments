@@ -1,0 +1,63 @@
+Local and Session Storage
+
+-local storage will remain until you manually take it out
+-session storage will last as long as the window is open and active
+
+var token = "mdowiej38rjc9e384h2384u92ijf23joicjwoe2";
+
+localStorage.setItem("token", token);
+
+// if you've signed off and later go to same website, you dont want to have to log in every time
+// so you want to GET the token from storage
+
+function login() {
+  if(localStorage.getItem("token")) {
+  alert("Welcome! You have been logged in automatically")
+  } else {
+  alert("Sorry you must log in");
+  }
+} 
+
+
+localStorage.getItem()
+////////////////////////////////
+
+//store items in a cart
+
+var cart = [
+  {
+  type: "keyboard"
+  price: 18
+  },
+  {
+  type: "mouse"
+  price: 15
+  },
+  {
+  type: "kombucha"
+  price: 4
+  },
+]
+
+localStorage.setItem("cart", JSON.stringify(cart));
+console.log(localStorage.getItem("cart"));
+
+/////////////////////////////////
+
+var str = "ima string"
+var num = 10;
+var bool = true;
+
+
+//always JSON.parse arrays
+
+console.log(JSON.parse(localStorage.getItem("arr")));
+
+window.addEventListener("click", function() {
+  console.log("I clicked");
+})
+
+
+
+
+

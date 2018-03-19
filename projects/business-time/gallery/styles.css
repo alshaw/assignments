@@ -1,0 +1,9 @@
+.images {
+  display: inline-block;
+}
+
+@media (max-width: 500px) {
+  body {
+    background: black;
+  }
+}

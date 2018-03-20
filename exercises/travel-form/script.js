@@ -1,6 +1,6 @@
-var form = document.getElementById("submit");
-var nameInput = document.getElementById("firstName");
-var nameInput = document.getElementById("lastName");
+var form = document.getElementById("submit").value;
+var nameInput = document.getElementById("firstName").value;
+var nameInput = document.getElementById("lastName").value;
 var femaleBox = document.getElementById("female");
 var maleBox = document.getElementById("male");
 var otherBox = document.getElementById("other");
@@ -15,10 +15,10 @@ var data = {
 
 // these event listeners just track the user activity and add data to 
 // the data to the appropriate part fo the data object
-nameInput.addEventListener("input", function (event) {
-  data.firstName = event.target.value;
-  console.log(data);
-});
+// nameInput.addEventListener("input", function (event) {
+//   data.firstName = event.target.value;
+//   console.log(data);
+// });
 
 function setGender(event) {
   // user clicks on checkbox
@@ -41,7 +41,17 @@ maleBox.addEventListener("change", setGender);
 otherBox.addEventListener("change", setGender);
 
 //send off the information now that it has been collected.
-form.addEventListener("submit", function () {
-  alert("First Name: " + data.firstName + "\n" + 
-  data.gender.join(", ");
-});
+
+// form.addEventListener("click", function () {
+//   alert("First Name: " + data.firstName + "\n" );
+//   // data.gender.join(", ");
+// };
+
+function alertBox() {
+  if(document.getElementById("firstName").value === "" || document.getElementById("lastName").value === "") {
+  alert("Please fill out all fields");
+} else {
+  document.getElementById("submit");
+  alert("First name: " + firstName);
+}
+}

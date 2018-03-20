@@ -10,7 +10,12 @@ axios.get("https://api.vschool.io/allie/todo")
   console.log(response.data);
   var todoList = document.getElementById("todo");
   for (var i = 0; i < response.data.length; i++) {
-  todoList.innerHTML += "<li>" + response.data[i].title + "</li>"
+  todoList.innerHTML += 
+  "<li>" +
+  "Todo: " + response.data[i].title + " " + 
+  "Price: " + response.data[i].price + " " + 
+  "Description: " + response.data[i].description + " " +
+  "</li>";
   }
 });
 
@@ -20,22 +25,22 @@ var myData = {
   description: ""
 };
 
-var form = document.getElementById("form")
-var title = document.getElementById("title")
-var price = document.getElementById("price")
-var description = document.getElementById("description")
+var form = document.getElementById("form");
+var title = document.getElementById("title");
+var price = document.getElementById("price");
+var description = document.getElementById("description");
 
 title.addEventListener("input", function(event){
   myData.title = event.target.value;
-})
+});
 
 price.addEventListener("input", function(event) {
   myData.price = event.target.value;
-})
+});
 
 description.addEventListener("input", function(event) {
   myData.description = event.target.value;
-})
+});
 
 form.addEventListener("submit", function(e){
   e.preventDefault();
@@ -44,9 +49,11 @@ form.addEventListener("submit", function(e){
     .then(function (response) {
       console.log(response.data);
       var todoList = document.getElementById("todo");
-      todoList.innerHTML += "<li>" + response.data.title + "</li>"
-    })
-})
+      todoList.innerHTML += 
+      "<li>" + "Todo: " + response.data.title + " " + "Price: " + "$" + response.data.price + " "
+      + "Description: " + response.data.description + "</li>";
+    });
+});
 
 //var button = document.createElement("button")
 //button.innerText = "X";

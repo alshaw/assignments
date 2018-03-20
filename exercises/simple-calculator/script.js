@@ -1,6 +1,6 @@
 function add () {
-  var num1 = document.getElementById('addNumOne').value;
-  var num2 = document.getElementById('addNumTwo').value;
+  var num1 = document.getElementById('firstNumAdd').value;
+  var num2 = document.getElementById('secondNumAdd').value;
   num1 = +num1;
   num2 = +num2;
   var sum = document.getElementById('additionSum');
@@ -8,11 +8,11 @@ function add () {
 }
 
 function subtract () {
-  var num1 = document.getElementById('subNumOne').value;
-  var num2 = document.getElementById('subNumTwo').value;
+  var num1 = document.getElementById('firstNumSub').value;
+  var num2 = document.getElementById('secondNumSub').value;
   num1 = +num1;
   num2 = +num2;
-  var sum = document.getElementById('subtraction');
+  var sum = document.getElementById('subtractionSum');
   sum.innerHTML = num1 - num2;
 }
 
@@ -21,6 +21,6 @@ function multiply () {
   var num2 = document.getElementById('multiplyNumTwo').value;
   num1 = +num1;
   num2 = +num2;
-  var product = document.getElementById('multiply');
+  var product = document.getElementById('multiplyProduct');
   product.innerHTML = num1 * num2;
 }

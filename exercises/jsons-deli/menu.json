@@ -24,15 +24,55 @@
     "name": "Veggie Cheesesteak",
     "description": "Vegan friendly!",
     "ingredients": ["Cauliflower", "Cashew cheese", "Homemade sauce"]
+  }],
+  "hotSandwiches": [{
+    "name": "Melt",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": ["sea salt and vinegar", "spicy"]
   },
   {
-    "name": "Tuna",
-    "description": "Wild caught Albacore tuna",
-    "ingredients": ["Albacore", "Sprouts", "pickles"]
-  }
-],
-  "hotSandwiches": [{
-
-  }]
+    "name": "Pickles",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": ["sea salt and vinegar", "spicy"]
+  },
+  {
+    "name": "Pickles",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": ["sea salt and vinegar", "spicy"]
+  }],
+   "desserts": [
+  {
+    "name": "Pickles",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": [
+      "sea salt and vinegar",
+      "spicy"
+    ]
+  },
+  {
+    "name": "Pickles",
+    "description": "Spicy or regular, they're delicious!",
+    "ingredients": [
+      "sea salt and vinegar",
+      "spicy"
+    ]
+  }],
+  "drinks": [
+    {
+      "name": "Pickles",
+      "description": "Spicy or regular, they're delicious!",
+      "ingredients": [
+        "sea salt and vinegar",
+        "spicy"
+      ]
+    },
+    {
+      "name": "Chips",
+      "description": "Home made and fresh!",
+      "ingredients": [
+        "sea salt and vinegar",
+        "bbq",
+        "sriracha"
+      ]
 
 }

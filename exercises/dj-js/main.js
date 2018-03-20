@@ -2,23 +2,23 @@ var box = document.getElementById('box');
 
 this.onmouseover = function () {
   box.style.backgroundColor = "blue";
-}
+};
 
 this.onmousedown = function () {
   box.style.backgroundColor = "red";
-}
+};
 
 this.onmouseup = function () {
   box.style.backgroundColor = "yellow";
-}
+};
 
 this.ondblclick = function () {
   box.style.backgroundColor = "green";
-}
+};
 
 window.onscroll = function () {
   box.style.backgroundColor = "orange";
-}
+};
 
 window.onkeypress = function (e) {
   if (e.keyCode === 98) {
@@ -32,4 +32,7 @@ window.onkeypress = function (e) {
   } else if (e.keyCode === 111) {
     box.style.backgroundColor = "orange";
   }
-}
+};
+
+
+

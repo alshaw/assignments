@@ -34,5 +34,3 @@ window.onkeypress = function (e) {
   }
 };
 
-
-

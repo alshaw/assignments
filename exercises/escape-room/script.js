@@ -10,8 +10,8 @@ var rs = require("readline-sync");
 // if (name) {
 //   console.log(name + "Hello " + name);
 // }
-let game = rs.question("Would you like to put your hand in the hole? Yes or no? ");
-let isAlive = true;
+var game = rs.question("Would you like to put your hand in the hole? Yes or no? ");
+var isAlive = true;
 while (isAlive) {
   if (game === "no") {
     console.log("Oh good. Putting your hand in a strange hole probably would have killed you.");
@@ -19,18 +19,18 @@ while (isAlive) {
     console.log("You died ");
     break;
   }
-  let question1 = rs.question("Should we try to find the key? ");
-  if (question1 === "yes") {
+  var findKey = rs.question("Should we try to find the key? ");
+  if (findKey === "yes") {
     console.log("Good choice. Looks like it's actually right under your foot. ");
-  } else if (question1 === "no") {
+  } else if (findKey === "no") {
     console.log("You should rethink that decision ");
     break;
   }
-  let question2 = rs.question("Should we try to open the door? ");
-  if (question2 === "yes") {
+  var openDoor = rs.question("Should we try to open the door? ");
+  if (openDoor === "yes") {
     console.log("Good choice! You're free ");
     break;
-  } else if (question2 === "no") {
+  } else if (openDoor === "no") {
     console.log("Sorry. You live in this room forever now. ");
     break;
   }

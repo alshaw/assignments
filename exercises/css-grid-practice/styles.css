@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.box {
+  height: 400px;
+  width: 600px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid black;
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/*
+.box3 {
+    height: 125px;
+    width: 125px;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.box4 {
+    height: 125px;
+    width: 125px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.box5 {
+    height: 125px;
+    width: 125px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+*/
+
+/*
+Positioning:
+
+NOT POSITIONED:
+
+position: static
+anything that you didn't tell to be positioned, is position static
+
+POSITIONED:
+everything else
+
+position: fixed
+- glues element to the screen in place
+- removes the element from the flow of the document
+- extra properties for moving it around
+    - top, right, bottom, and left
+
+
+position: absolute
+- removes the element from the flow of the document
+- extra properties for moving it around
+    - top, right, bottom, and left
+- bounded by the boundaries of its most closely-related POSITIONED ancestor
+
+
+position: relative
+- like position: static, except it's considered POSITIONED
+    - This means any children that are position: absolute are stuck within the boundaries of the element that is position: relative
+- is NOT removed from the flow of the document (just like position: static)
+- top, right, bottom, and left DO NOT WORK

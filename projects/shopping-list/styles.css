@@ -1,7 +1,14 @@
 * {
-  align-content: center
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.input {
-  align-items: center;
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 10%;
+}
+
+.input{
+  display: flex;
+
 }

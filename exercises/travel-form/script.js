@@ -47,11 +47,7 @@ otherBox.addEventListener("change", setGender);
 //   // data.gender.join(", ");
 // };
 
-function alertBox() {
-  if(document.getElementById("firstName").value === "" || document.getElementById("lastName").value === "") {
-  alert("Please fill out all fields");
-} else {
-  document.getElementById("submit");
-  alert("First name: " + firstName);
-}
-}
+form.addEventListener("submit", function (e) {
+      var list = document.getElementById("output");
+      alert("Name: " + nameInput + femaleBox);
+    });

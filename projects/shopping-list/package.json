@@ -1,0 +1,15 @@
+{
+  "name": "shopping-list",
+  "version": "1.0.0",
+  "description": "18 MAY 2015 on Web Applications, Level 1, Project Your mom is frustrated by her propensity to lose slips of paper with writing on them, specifically her shopping lists. She knows that you're a really smart web developer and assumes that you can easily make her a website to keep track of her shopping list.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

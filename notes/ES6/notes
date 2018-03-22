@@ -1,0 +1,108 @@
+😺 const and let:
+-makes our code more readable
+-will take the place of var
+
+const:
+-used for variables that cannot be reassigned a new value
+-can add to arrays inside of const 
+-can change the name of the property, just can't reasign the name
+
+let:
+-used for variables that might change
+-block scoped as opposed to function scoped
+
+var (only function scoped) will override everything unless it is in a function
+
+Practice
+change all the following vars to either const or let
+
+const name = "Ben";  
+let age = 24;  
+const dateOfBirth = "feb";
+
+const statuses = [  
+  { code: 'OK', response: 'Request successful' },
+  { code: 'FAILED', response: 'There was an error with your request' },
+  { code: 'PENDING', response: 'Your reqeust is still pending' }
+];
+const message = '';  
+const currentCode = 'OK';
+
+for (let i = 0; i < statuses.length; i++) {  
+  if (statuses[i].code === currentCode) {
+    message = statuses[i].response;
+  }
+}
+
+😺 Template literals:
+- ben says they r vvv awesome
+- designed for making strings easier to read and write
+
+let name = "Allie";  
+let age = 26;    
+console.log("hello, my name is " + name + " and I am " + age + " years old.");  
+
+is now this:
+
+console.log(`hello, my name is ${name} and I am ${age} years old.`);  
+- use backticks 
+
+
+
+😺 Spread operators:
+-cleaner way to concat()
+
+const defaultColors = ['red', 'green'];  
+const userFavoriteColors = ['orange', 'yellow'];
+defaultColors.concat(userFavoriteColors);
+
+is now this:
+
+[ ...defaultColors, ...userFavoriteColors ];
+
+const num1 = [1, 2, 3, 4, 5];
+const num2 = [6, 7, 8, 9, 10];
+const num3 = num2.concat(num1);
+
+😺 Desctructuring: 
+-lets you extract data from an object
+
+var expense = {  
+  type: "Business",
+  amount: "$45 USD"
+};
+
+var type = expense.type;  
+var amount = expense.amount;
+
+is now this:
+
+const {type} = expense;
+const {amount} = expense;
+
+const petNames = ["Buzz", "Major", "Friskey", "Tiger", "Kona"]
+let [buzz, , friskey, , kona]
+
+
+😸 Default parameters:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+// display all the todos from the API
+// GET them
+const todoList = document.getElementId("todo-list")
+axios.get("API GOES HERE").then(function(response) {
+  turn the data into elements, something the user can see
+  response.data.forEach(function(todo) {
+    todoList.innerHTML += `<li>${todo.title}</li>
+  })
+})
+
+
+inputs - add a new todo items to the list and the server/database
+inputs for title, description, price
+button - submit the new todo, and add it to the local list  
+   should be able to refresh and see the new items
+
+//listen to submit on form

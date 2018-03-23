@@ -1,6 +1,6 @@
 var rs = require("readline-sync");
-console.log("Welcome this super duper fun game!");
-var playerName = rs.question("Whats is your name, player? ");
+console.log(" 🏹  " + "Welcome this super duper fun game!" + " 🏹 ");
+var playerName = rs.question("Whats is your name? ");
 console.log("Hello, " + playerName + ". Type 'print' at any time to view your inventory and hp. ");
 
 
@@ -13,7 +13,7 @@ var player = {
   hp: 100,
   attack: undefined,
   enemiesKilled: 0,
-  inventory: []
+  inventory: [""]
 };
 
 // constructor enemy function to create a blueprint for all enemies
@@ -21,17 +21,18 @@ var Enemy = function() {
   this.type = getRandomType();
   this.attack = Math.floor(Math.random() * 20) + 10;
   this.hp = 50;
-  this.item = ["Rubber duck", "Red ballon", "Salsa"];
 };
 
 //get inventory item from enemy
 function getInventory() {
-  enemy.item
-}
+  var inventory = ["Rubber Duck", "Salsa", "Broom"];
+  var getItem = inventory[Math.floor(Math.random() * inventory.length)];
+  player.inventory.push(getItem);
+};
 
 //generates random enemy
 var getRandomType = function() {
-  var enemyTypes = ["Ancient Dragon", "Prowler", "MightyGrunt"];
+  var enemyTypes = ["Ancient Dragon 🐉 ", "Prowler 🐈 ", "Evil Clown 🤡 "];
   var randIndex = Math.floor(Math.random() * enemyTypes.length);
   return enemyTypes[randIndex];
 };
@@ -43,7 +44,7 @@ Enemy.prototype.genHitPoints = function() {
       return Math.floor(Math.random() * 21) + 80;
     case "Prowler":
       return Math.floor(Math.random() * 30) + 50;
-    case "Mighty Grunt":
+    case " Evil Clown":
       return Math.floor(Math.random() * 30) + 20;
   }
 };
@@ -66,16 +67,16 @@ while (player.hp > 0 && player.enemiesKilled < 3) {
           enemy.hp = enemy.hp - attackDamage;
           //if the enemy hp < 0, enemy dies and player gains enemies killed and inventory from enemy.
           if (enemy.hp <= 0) {
-            console.log("You killed the " + enemy.type);
+            console.log("You killed the " + enemy.type + "!");
             player.enemiesKilled++;
             getInventory();
             break;
           } else {
-            console.log("You hit the " + enemy.type + " for " + attackDamage);
+            console.log("You hit the " + enemy.type + " for " + attackDamage + "!");
           }
           //subtract enemy attack from player hp
           player.hp = player.hp - enemy.attack;
-          console.log("Your hp is " + player.hp);
+          console.log(" ❤️  " + "Your hp is " + player.hp);
           //if players hp < 0, player dies and game ends
           if (player.hp <= 0) {
             console.log("The enemy killed you!");
@@ -83,14 +84,17 @@ while (player.hp > 0 && player.enemiesKilled < 3) {
           }
           //if player chooses to run, choose a random number for a 50% of escaping
         } else if (action === 'r' && Math.floor(Math.random() * 100) > 50) {
-          console.log("You escaped!");
+          console.log("You escaped! 😸 ");
+          break;
+        } else {
+          console.log("The enemy caught you. You died. ☠️  ");
           break;
         }
       }
     }
     //print player name, inventory and hp when player types 'print'
   } else if (playerCommand === "print") {
-    console.log(player.name + ", \n" + "Your inventory is: " + player.inventory + " \n Your hp is: " + player.hp);
+    console.log(player.name + " \n" + " 💰 Your inventory is: " + player.inventory + " \n ❤️ Your hp is: " + player.hp);
   } else {
     console.log("Invalid command, please type 'w' ");
   }

@@ -15,3 +15,14 @@ button - submit the new todo, and add it to the local list
    should be able to refresh and see the new items
 
 //listen to submit on form
+
+function createTodoLi(todo) {
+  let span;
+  if (todo.completed) {
+    span = `<span class="completed">${todo.title}</span>
+  } else {
+    span = `<span>${todo.title}</span>
+  }
+}
+
+return 

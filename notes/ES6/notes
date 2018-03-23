@@ -1,4 +1,4 @@
-😺 const and let:
+😺 const and let: 😺
 -makes our code more readable
 -will take the place of var
 
@@ -34,7 +34,7 @@ for (let i = 0; i < statuses.length; i++) {
   }
 }
 
-😺 Template literals:
+😺 Template literals: 😺
 - ben says they r vvv awesome
 - designed for making strings easier to read and write
 
@@ -49,7 +49,7 @@ console.log(`hello, my name is ${name} and I am ${age} years old.`);
 
 
 
-😺 Spread operators:
+😺 Spread operators: 😺
 -cleaner way to concat()
 
 const defaultColors = ['red', 'green'];  
@@ -64,7 +64,7 @@ const num1 = [1, 2, 3, 4, 5];
 const num2 = [6, 7, 8, 9, 10];
 const num3 = num2.concat(num1);
 
-😺 Desctructuring: 
+😺 Desctructuring: 😺
 -lets you extract data from an object
 
 var expense = {  
@@ -84,7 +84,102 @@ const petNames = ["Buzz", "Major", "Friskey", "Tiger", "Kona"]
 let [buzz, , friskey, , kona]
 
 
-😸 Default parameters:
+😺 Arrow functions 😺
+
+instead of this:
+
+const names = ['buzz', 'allie', 'beans'];
+
+const fullNames = names.map(function(name) {
+  return `${name} shaw`;
+});
+
+const fullNames2 = names.map((name) => {
+  return `${name} shaw`;
+});
+
+//can also do it without parantheses after param
+const fullNames3 = names.map(name => {
+  return `${name} shaw`;
+})
+
+//implicit return
+const fullNames4 = names.map(name => `${name} shaw`);
+console.log(fullNames4 + "👍 " );
+
+(x, y) => x + y;
+
+//more than one expression in the function body, you willl need the curly fries
+(x, y) => {
+  //more
+  //than
+  //one
+}
+
+//return an object 
+(x, y) => ({
+  x,
+  y
+})
+
+//this
+-the keyword this is always an object and always context dependent. 
+-it always refers to the object which called the function.
+
+this.console.log("test");
+Math.min(1,2);
+setInterval();
+
+const Traveler = function(name) {
+  this.name = name;
+  this.message = "blah blah blah";
+  this.translator = {
+    translate: () => console.log(this.message)
+  }
+}
+const steven = new Traveler("Steven");
+steven.translator.translate();
+
+
+
+
+
+
+
+
+
+
+
+😃 Object Literals: 😃
+
+let name = "Allie";
+let age = 26;
+
+let person = {
+  name,
+  age
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

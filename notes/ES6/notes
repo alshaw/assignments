@@ -122,6 +122,11 @@ console.log(fullNames4 + "👍 " );
   y
 })
 
+
+
+
+
+
 //this
 -the keyword this is always an object and always context dependent. 
 -it always refers to the object which called the function.
@@ -143,13 +148,6 @@ steven.translator.translate();
 
 
 
-
-
-
-
-
-
-
 😃 Object Literals: 😃
 
 let name = "Allie";
@@ -162,8 +160,40 @@ let person = {
 
 
 
+😃 Constructor functions
+-generate instances of objects
+
+function Vehicle 
+
+const Mammal = function() {
+  Animal.call(this);
+  this.hasFur = true;
+  this.liveBirth = true;
+}
+////////////////////////
+
+const Animal {
+  constructor(sound){
+    this.hasCellWall = false;
+    this.sound = sound;
+  }
+  makeSound() {
+    console.log(this.sound);
+  }
+}
+
+class Mammal extends Animal{
+  constructor(sound) {
+    super()
+    this.hasFur = true;
+    this.liveBirth = true;
+  }
+}
 
 
+const randomAnimal = new Mammal();
+
+console.log(randomAnimal);
 
 
 

@@ -24,5 +24,5 @@ form.addEventListener("submit", function (e) {
   };
   console.log(myData);
   domStuff(myData);
-  form.title.value = "";
+  form.reset();
 });

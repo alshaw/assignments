@@ -88,6 +88,7 @@ while (player.hp > 0 && player.enemiesKilled < 3) {
           break;
         } else {
           console.log("The enemy caught you. You died. ☠️  ");
+          player.hp = 0;
           break;
         }
       }

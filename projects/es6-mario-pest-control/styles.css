@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Super Mario 256';
+  src: url(fonts/SuperMario256.ttf);
+}
+
+* {
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  font-family: 'Super Mario 256';
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  background-color: #D93930;
+  color: #FBDA4B;
+}
+
+.mario-star {
+  display: flex;
+  align-content: space-around;
+  padding: 15px;
+  height: 150px;
+  width: 150px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+  margin: auto 0;
+}
+
+.baddies {
+  font-family: 'Super Mario 256';
+  display: flex;
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+  padding: 20px;
+  color: #D93930;
+}
+
+.totals {
+  font-family: 'Super Mario 256';
+  color: blue;
+  display: flex;
+  text-align: center;
+  padding-top: 60px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #D93930;
+  color: #FBDA4B;
+  font-size: 20px;
+}
+
+img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+}

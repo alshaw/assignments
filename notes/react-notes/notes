@@ -1,0 +1,56 @@
+model - data
+view - what the user sees
+controller - 
+
+1. uni-directional data flow (mono flow)
+state -> view -> state
+
+2. component based - breaks code into smaller, reusable pieces. makes debugging easier. 
+a component is a function that generates an element
+
+3. declarative - as apposed to implicit or imparative 
+(instead of telling it how to do something, you're telling it what to do)
+
+4. Uses the virtual DOM 
+the v dom is a JS object that is assembled by react.
+v dom is a copy of the original dom. v dom gets updated first and then updates the original dom.
+
+**************************
+~ ES5 React ~
+<div id="root></div>
+createElement - create an element
+render - render something to the page
+
+fist argument as what kind of element, second is what props, third is what child (ex: li to ul)
+const h1 = React.createElement("h1", null, "Hello World")
+
+ReactDOM.render(h1, document.getElementById("root"))
+
+**************************
+~ ES6 React ~
+
+const component = 
+  <div>
+    <h1 id="header">Hello World</h1>
+    <p>I'm a paragraph</p>
+  </div>;
+
+const content = 
+  <section className="section">
+    <h3>Title</h3>
+    <p>Paragraph</p>
+  </section>;
+
+const footer = 
+  <footer>
+  Made by Allie
+  </footer>;
+
+const app =
+  <div>
+    {header}
+    {content}
+    {footer}
+  </div>;
+
+ReactDOM.render(app, document.getElementById("root"))

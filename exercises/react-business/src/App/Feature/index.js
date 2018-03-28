@@ -3,7 +3,7 @@ import React from "react";
 function Feature() {
   return (
     <div>
-      <button>Click me!</button>
+      <button className="button">Click me! I do nothing.</button>
     </div>
   )
 }

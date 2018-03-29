@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Wonder Woman",
+    "age": 400,
+    "filename": "wonderwoman.jpg",
+    "motto": "cool beans"
+  },
+  {
+    "name": "Batman",
+    "age": 43,
+    "filename": "batman.jpg",
+    "motto": "The joker sucks."
+  },
+  {
+    "name": "Captain Marvel",
+    "age": 30,
+    "filename": "captainmarvel.jpg",
+    "motto": "I shoot concussive energy from my hands."
+  },
+  {
+    "name": "Black Widow",
+    "age": "27",
+    "filename": "blackwidow.jpg",
+    "motto": "I'm an expert spy, athlete, and assasin."
+  },
+  {
+    "name": "Medusa",
+    "age": 402,
+    "filename": "medusa.jpg",
+    "motto": "I'm Medusa"
+  }
+]

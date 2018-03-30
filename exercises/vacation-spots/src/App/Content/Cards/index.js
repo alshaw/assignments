@@ -1,25 +1,12 @@
-import React, { Component } from "react";
-// import "./index.css";
+import React from "react";
+import "./styles.css";
 
 function Cards(props) {
-  let { place, price, timeToGo } = props;
   let color;
   let backgroundColor;
+  let { price, place, timeToGo } = props;
   let dollarSigns;
-  switch (timeToGo) {
-    case "Summer":
-      backgroundColor = "rosybrown";
-      break;
-    case "Fall":
-      backgroundColor = "maroon";
-      break;
-    case "Winter":
-      backgroundColor = "lightyellow";
-      break;
-    case "Spring":
-      backgroundColor = "lightgreen";
-      break;
-  }
+
   if (price < 500) {
     dollarSigns = '$';
   } else if (price < 1000) {

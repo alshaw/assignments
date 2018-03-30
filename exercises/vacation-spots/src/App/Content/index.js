@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-// import "./index.css";
+import React from "react";
 import Cards from "./Cards";
+import "./styles.css";
 
 function Content(props) {
   let vacationSpots = [
@@ -25,13 +25,13 @@ function Content(props) {
       price: 400,
       timeToGo: "Spring"
     }
-
   ]
   return (
     <div className="card-wrapper">
       {vacationSpots.map((location) => {
         return <Cards {...location}></Cards>
-      })}
+        })
+      }
     </div>
   )
 }

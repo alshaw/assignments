@@ -18,9 +18,9 @@ function Cards(props) {
   let style = { backgroundColor: backgroundColor, color: color }
   return (
     <div className="cards" style={style}>
-      <h2>{place} | {dollarSigns}</h2>
-      <h3>Best time to go: {timeToGo}</h3>
-      <h4>{price}</h4>
+      <h2>{place} {dollarSigns}</h2>
+      <h3>Time to go: {timeToGo}</h3>
+      <h4>${price}</h4>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const vegetables = carrots.map(function (carrot) {
 })
 
 
-//rewrite thus using a fat arrow function:
+//rewrite this using a fat arrow function:
 friends = people.filter(function (person) {
   return !!person.friendly
 })
@@ -57,7 +57,7 @@ var produceProduct = function(a, b) {
 
 //use the shorthand syntax to make the following code block take up one line
 
-const dogs = animals.fitler((animal) =>{
+const dogs = animals.fitler((animal) => {
   if(animal.type === "dog"){
     return true
   } else {

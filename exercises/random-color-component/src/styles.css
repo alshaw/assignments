@@ -1,0 +1,36 @@
+* {
+  /* margin: 0; */
+  text-align: center;
+}
+
+.app-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas: "hdr" "cont" "ftr"
+}
+
+header {
+  grid-area: hdr;
+  margin-top: 50px;
+  background-color: whitesmoke;
+}
+
+.content-wrapper {
+  grid-area: cont;
+}
+
+footer {
+  grid-area: ftr;
+  
+}
+
+nav > a {
+  padding: 20px;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  /* text-decoration: underline; */
+  font-weight: bold;
+}

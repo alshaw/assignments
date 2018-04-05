@@ -1,34 +1,20 @@
 const redux = require("redux");
 
-const contacts = [
-  {
-    name: "Tommy Oliver",
-    phone: "925-867-5309",
-    email: "thegreenranger@powerrangers.com"
-  },
-  {
-    name: "Allie Shaw",
-    phone: "555-123-4567",
-    email: "theyellowranger@powerrangers.com"
-  },
-  {
-    name: "Buzz Lightyear",
-    phone: "555-555-4567",
-    email: "dog@doggydog.com"
-  }
-];
-
 //set up intial state
 const initialState = {
-  contacts: contacts.name
+  contacts: []
 }
 
 //define reducer, which will spit out a new state based on action and prevState
 const reducer = (state = initialState, action) => {
   switch(action.type) {
-    case "ADD":
+    case "ADD_CONTACT":
       return {
-        contacts: state.contacts
+        contacts: [...state.contacts, action.contact]
+      }
+    case "REMOVE_CONTACT": 
+      return {
+        contacts: state.contacts.filter(contact => contact.name !== action.name)
       }
     default: 
       return state;
@@ -36,19 +22,33 @@ const reducer = (state = initialState, action) => {
 }
 
 //actions are OBJECTS that carry information that potentially will be useful for state
-const action = {
-  type: "ADD",
-  contact: {
-    name: "Person McPerson",
-    phone: "801-555-1234",
-    email: "person@mcperson.com"
-  }
-}
-
 //create a store
 const store = redux.createStore(reducer);
 store.subscribe(() => console.log(store.getState()));
 
+const addContact = contact => {
+  store.dispatch({
+    type: "ADD_CONTACT",
+    contact
+  })
+}
+
+const removeContact = name => {
+  store.dispatch({
+    type: "REMOVE_CONTACT",
+    name
+  })
+}
+
+addContact({
+  name: "Allie",
+  phone: "555-555-5555",
+  email: "ashaw@gmail.com"
+})
+
+removeContact("Allie");
+
+
 //dispatch actions
-store.dispatch(action);
-console.log(store.getState());
+// store.dispatch(action);
+// console.log(store.getState());

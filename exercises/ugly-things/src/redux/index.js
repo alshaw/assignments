@@ -1,4 +1,5 @@
 import { createStore, combineReducers } from "redux";
+// import posts from "./posts.js";
 
 import postReducer from "./posts";
 

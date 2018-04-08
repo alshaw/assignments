@@ -1,23 +1,17 @@
-const initialState = {
-  data: []
-}
-
-const postReducer = (state = initialState, action) => {
+const postReducer = (prevPost = [], action) => {
   switch (action.type) {
     case "ADD_POST":
-      return {
-        data: [...state.data, action.post]
-      };
-    default: 
-      return state;
+      return [...prevPost, action.newPost];
+    default:
+      return prevPost;
   }
 };
 
-export const addPost = post => {
+export const addPost = newPost => {
   return {
     type: "ADD_POST",
-    post
-  }
+    newPost
+  };
 };
 
 export default postReducer;

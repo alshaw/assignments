@@ -1,4 +1,9 @@
 .form-wrapper {
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+header {
+  display: flex;
+  justify-content: center;
+  font-family: "../../public/fonts/jonathan-s-harris_cartoon-freak"
 }

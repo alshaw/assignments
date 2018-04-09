@@ -8,7 +8,7 @@ function List(props) {
   <Item key={cat.imgUrl + i}{...cat}
   removeCat={props.removeCat}index={i}></Item>)
   return (
-    <div>
+    <div className="cat-component">
       {catComponents}
     </div>
   )

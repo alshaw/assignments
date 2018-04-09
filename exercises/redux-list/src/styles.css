@@ -1,7 +1,18 @@
 * {
   margin: 0;
 }
-  
-.app-wrapper{
+
+.cat-component {
   display: flex;
+  /* justify-content: center; */
+  flex-direction: column-reverse;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+delete-button{
+  background-color: red;
 }

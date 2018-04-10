@@ -1,9 +1,46 @@
 .form-wrapper {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin: 70px;
+
 }
+
 header {
   display: flex;
   justify-content: center;
-  font-family: ""
+  /* font-family: "comic-sans"; */
+  background-color: #5F5F5F;
+  color: white;
+}
+
+.post-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  /* flex-direction: column-reverse; */
+  padding: 20px;
+}
+
+.edit-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 30px;
+  border: 1px solid gray
+}
+
+.item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 2px solid gray;
+  padding: 10px;
+  background-color: #F1F1F1;
+}
+
+h3 {
+  text-decoration: underline;
 }

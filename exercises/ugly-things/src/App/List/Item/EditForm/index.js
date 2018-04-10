@@ -35,10 +35,11 @@ class EditForm extends Component {
 
   render() {
     const { imgUrl, caption, description } = this.state.inputs;
-    return <form onSubmit={this.handleSubmit}>
+    return <form onSubmit={this.handleSubmit} className="edit-form">
         <input onChange={this.handleChange} name="imgUrl" value={imgUrl} type="text" placeholder="Edit Image" />
         <input onChange={this.handleChange} name="caption" value={caption} placeholder="Edit Caption" />
-        <input onChange={this.handleChange} name="caption" value="text" placeholder="Edit Caption" />
+        <input onChange={this.handleChange} name="description" value={description} placeholder="Edit Description" />
+        <button>Edit Post</button>
       </form>;
   }
 }

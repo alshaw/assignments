@@ -6,7 +6,7 @@ const postReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_POST":
       return {
-        data: [...state.data, action.newPost]
+        data: [...state.data, action.post]
       }
     case "REMOVE_POST":
       return { 

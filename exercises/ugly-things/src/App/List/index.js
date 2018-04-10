@@ -5,9 +5,14 @@ import Item from "./Item/";
 // import { addPost } from "../../redux/posts.js";
 
 function List(props) {
-  const postComponents = props.data.map((post, i) => <Item key={post.imgUrl + i}{...post} removePost={props.removePost} index={i}></Item>)
+  console.log(props);
+  const postComponents = props.data.map((post, i) => 
+    <Item key={post.imgUrl + i}{...post} 
+          removePost={props.removePost} 
+          index={i}>
+    </Item>)
   return (
-    <div>
+    <div className="post-list">
       { postComponents }
     </div>
   )

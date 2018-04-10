@@ -1,16 +1,20 @@
 import React from "react";
 import { connect } from "react-redux";
-import { addPost } from "../../redux/posts.js";
+import { removePost } from "../../redux/posts";
+import Item from "./Item/";
+// import { addPost } from "../../redux/posts.js";
 
-function UglyThing(props) {
-  let { imgUrl, title, description } = props;
+function List(props) {
+  const postComponents = props.data.map((post, i) => <Item key={post.imgUrl + i}{...post} removePost={props.removePost} index={i}></Item>)
   return (
-    <div className="app-wrapper">
-      <h2 className="title">{ title }</h2>
-      <p className="description">{ description }</p>
-      <img className="image" src={ imgUrl } alt=""/>
+    <div>
+      { postComponents }
     </div>
-  );
+  )
 }
 
-export default connect(null, { addPost })(UglyThing);
+const mapStateToProps = state => {
+  return state.posts;
+}
+
+export default connect(mapStateToProps, { removePost })(List);

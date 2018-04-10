@@ -5,14 +5,14 @@ import { addPost } from "../../redux/posts.js";
 class Form extends Component {
   constructor(props) {
     super(props);
-    let { imgUrl, title, description } = props;
-    this.state = {
+    this.initialState = {
       inputs: {
-        imgUrl: imgUrl || "",
-        title: title || "",
-        description: description || ""
+        imgUrl: "",
+        caption: "",
+        description: ""
       }
-    };
+    }
+    this.state = this.initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,52 +31,18 @@ class Form extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let { addPost } = this.props;
-    addPost(this.state.inputs);
-    this.clearInputs();
-  }
-
-  clearInputs() {
-    this.setState({
-      inputs: {
-        imgUrl: "",
-        title: "",
-        description: ""
-      }
-    });
+    this.props.addPost(this.state.inputs);
+    this.setState(this.initialState);
   }
 
   render() {
-    let { imgUrl, title, description } = this.state.inputs;
-    return (
-      <form className="form-wrapper" onSubmit={this.handleSubmit}>
-        <input
-          className="input"
-          placeholder="Upload image "
-          name="imgUrl"
-          value={imgUrl}
-          onChange={this.handleChange}
-          type="text"
-        />
-        <input
-          className="input"
-          placeholder="Title"
-          name="title"
-          value={title}
-          onChange={this.handleChange}
-          type="text"
-        />
-        <input
-          className="input"
-          placeholder="Description"
-          name="description"
-          value={description}
-          onChange={this.handleChange}
-          type="text"
-        />
+    const { imgUrl, caption, description } = this.state.inputs;
+    return <form onSubmit={this.handleSubmit} className="form-wrapper">
+        <input onChange={this.handleChange} name="imgUrl" placeholder="Upload image of ugly thing" value={imgUrl} type="text" />
+        <input onChange={this.handleChange} name="caption" placeholder="caption" value={caption} type="text" />
+        <input onChange={this.handleChange} name="description" placeholder="Describe this ugly thing" value={description} type="text" />
         <button>Submit</button>
       </form>
-    );
   }
 }
 

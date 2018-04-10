@@ -1,0 +1,24 @@
+* {
+  /* margin: 0px; */
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: url("https://pixabay.com/photo-2250310/");
+  background-repeat: no-repeat;
+  color: darkblue;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 50px; */
+  padding: 50px;
+  margin-bottom: 50px;
+  border: 1px solid black;
+}
+
+.planet-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

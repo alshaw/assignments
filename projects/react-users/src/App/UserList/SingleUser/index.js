@@ -4,11 +4,13 @@ function SingleUser(props) {
   console.log(props);
   const { name, picture, login } = props;
   return (
-    <div className="user-wrapper">
-      <h2>{name.first} {name.last}</h2>
-      <h3>Username: {login.username}</h3>
-      <img src={picture.thumbnail} alt="User"></img>
-    </div>
+        <div className="user-wrapper">
+          <img className="user-image" src={picture.large} alt="User" />
+          <h2>
+            {name.first} {name.last}
+          </h2>
+          <h3>{login.username}</h3>
+        </div>
   )
 }
 

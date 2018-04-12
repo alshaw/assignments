@@ -20,7 +20,7 @@ class UserList extends Component {
         )
     } else {
         return (
-          <div>
+          <div className="user-list">
             {userComponents}
           </div>
        )

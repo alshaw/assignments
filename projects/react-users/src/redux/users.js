@@ -25,12 +25,13 @@ const userReducer = (state = initialState, action) => {
   }
 }
 
-const userUrl = "https://randomuser.me/api/?results=5000";
+const userUrl = "https://randomuser.me/api/?results=3";
 
 export const getUsers = () => {
   return dispatch => {
     axios.get(userUrl)
       .then(response => {
+        console.log(response.data);
         dispatch({
           type: "GET_USERS",
           users: response.data.results

@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-// import UserList from "./UserList";
+import UserList from "./UserList/";
 import "./styles.css";
 
 function App(props) {
@@ -20,7 +20,7 @@ function App(props) {
           </Switch>
        </div>
        <div className="body-wrapper">
-         {/* <UserList></UserList> */}
+         <UserList></UserList>
        </div>
       <Footer />
     </div>

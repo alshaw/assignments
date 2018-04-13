@@ -13,7 +13,6 @@ class UserList extends Component {
     const userComponents = data.map((user, i) => <SingleUser key={user.name + i} {...user}></SingleUser>)
     if (loading) {
       return (
-        // <div>...Loading</div>
         <DataLoader />
       )
     } else if (errMsg) {

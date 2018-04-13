@@ -11,10 +11,8 @@ const style = {
 function SingleUser(props) {
   console.log(props);
   const { name, picture, login } = props; 
-  const PopupExampleStyle = () => <Popup trigger={<Card.Content />} content="Popup with a custom style prop" style={style} inverted />;
-  return (
-    <Card>
-    <Popup></Popup>
+  const trigger = (
+     <Card>
       <Card.Content className="single-user">
         <Image style={{ border: "1px solid darkgray" }} src={picture.large} />
         <Card.Header>
@@ -26,6 +24,11 @@ function SingleUser(props) {
       </Card.Content>
     </Card>
   )
+   
+  return (
+    <Popup trigger={trigger} content={"a quote"} />
+  )
 }
+
 
 export default SingleUser;

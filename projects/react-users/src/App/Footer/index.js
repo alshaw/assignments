@@ -3,7 +3,7 @@ import React from "react";
 function Footer(props) {
   return (
     <footer>
-      <p>stay at the bottom you piece of shit</p>
+      <p>&copy; stay at the bottom you piece of shit 2018</p>
     </footer>
   );
 }

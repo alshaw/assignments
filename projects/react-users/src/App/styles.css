@@ -34,7 +34,6 @@ footer {
   background-color: #395899;
   border: .5px solid #1e3872;
   color: white;
-  text-align: center;
 }
 
 .link-wrapper {
@@ -67,7 +66,7 @@ footer {
 
 .single-user:hover {
   transition: all 1s ease;
-  background-color: rgb(145, 140, 140);
+  background-color: rgb(163, 161, 161);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 

@@ -3,9 +3,10 @@ import React from "react";
 const style = {
   borderRadius: 0,
   // opacity: 1.9,
-  padding: "2em",
+  padding: "1em",
   backgroundColor: "black",
-  color: "white"
+  color: "white",
+  position: "top-center"
 };
 
 function SingleQuote(props) {

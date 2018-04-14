@@ -2,8 +2,6 @@ import React from "react";
 import { Card, Image, Popup, Icon, Button } from "semantic-ui-react";
 // import SingleQuote from "./SingleQuote";
 import QuoteList from "../../QuoteList";
-import { Link } from "react-router-dom"
-import About from "../../pages/About";
 
 const style = {
   borderRadius: 0,
@@ -27,14 +25,14 @@ function SingleUser(props) {
           {login.username}
         </Card.Description>
       </Card.Content>
-      <Card.Content extra>
+      {/* <Card.Content extra>
         <div className="ui-buttons">
           <Icon floated="left" name="heart" color="red" size="large" circular />
           <Button basic color="red">
             Add
           </Button>
         </div>
-      </Card.Content>
+      </Card.Content> */}
     </Card>;
    
   return (

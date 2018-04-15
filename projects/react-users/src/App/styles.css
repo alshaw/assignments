@@ -38,8 +38,8 @@ footer {
 
 .link-wrapper {
   display: flex;
-  align-content: flex-end;
-  bottom: 0;
+  align-content: space-between;
+  /* bottom: 0; */
 }
 
 .single-user {

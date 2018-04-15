@@ -4,9 +4,9 @@ import { Card, Image, Popup, Icon, Button } from "semantic-ui-react";
 import QuoteList from "../../QuoteList";
 
 const style = {
-  borderRadius: 0,
-  // opacity: 0.7,
-  padding: "2em"
+  borderRadius: "5px",
+  opacity: 0.9,
+  padding: "2em",
 };
 
 
@@ -25,14 +25,13 @@ function SingleUser(props) {
           {login.username}
         </Card.Description>
       </Card.Content>
-      {/* <Card.Content extra>
+      <Card.Content extra>
         <div className="ui-buttons">
-          <Icon floated="left" name="heart" color="red" size="large" circular />
-          <Button basic color="red">
+          {/* <Button Icon name="heart" basic color="red">
             Add
-          </Button>
+          </Button> */}
         </div>
-      </Card.Content> */}
+      </Card.Content>
     </Card>;
    
   return (

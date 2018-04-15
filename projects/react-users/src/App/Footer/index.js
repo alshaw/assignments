@@ -5,8 +5,8 @@ import "../styles.css";
 function Footer(props) {
   return <footer>
       {/* <p>&copy; 2018</p> */}
-      <Icon name="home" color="black" size="large" />
-      <Icon name="theme" color="grey" size="large" />
+      <Icon name="heart" color="white" size="large" />
+      <Icon name="tree" color="white" size="large" />
     </footer>;
 }
 

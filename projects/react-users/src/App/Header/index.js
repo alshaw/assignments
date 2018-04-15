@@ -8,14 +8,14 @@ function Header(props) {
         happy campers
       </h1>
       <nav className="link-wrapper">
-        <Link to="/">
-          <Icon name="home" style={{ color: "white", textDecoration: "none" }} />
+        <Link to="/" className="nav-link">
+          <Icon name="home" className="nav-icon" />
         </Link>
-        <Link to="/about">
-          <Icon name="help circle" style={{ color: "white", textDecoration: "none" }} />
+        <Link to="/about" className="nav-link">
+          <Icon name="help circle" className="nav-icon" />
         </Link>
-        <Link to="/contact">
-          <Icon name="talk" style={{color: "white", textDecoration: "none"}} />
+        <Link to="/contact" className="nav-link">
+          <Icon name="talk" className="nav-icon" />
         </Link>
       </nav>
     </header>;

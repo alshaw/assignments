@@ -2,6 +2,7 @@ import axios from "axios";
 
 const initialState = {
   data: [],
+  // savedUsers: [],
   loading: true,
   errMsg: ""
 }
@@ -14,6 +15,12 @@ const userReducer = (state = initialState, action) => {
         data: action.users,
         loading: false
       }
+    // case "SAVE_USER":
+    //   return {
+    //     ...state, 
+    //     savedUsers: state.savedUsers + action.user,
+    //     loading: false
+    //   }
     case "ERR_MSG":
     return {
       ...state,

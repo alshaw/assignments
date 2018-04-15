@@ -12,25 +12,16 @@ const style = {
 
 function SingleUser(props) {
   // console.log(props);
-  const { name, picture, login } = props; 
+  const { name, picture, location } = props; 
   const trigger = <Card>
       <Card.Content className="single-user">
         <Image style={{ border: "1px solid darkgray" }} src={picture.large} />
         <Card.Header>
           {name.first} {name.last}
         </Card.Header>
-        <Card.Description
-          style={{ color: "purple", display: "flex", flexWrap: "wrap" }}
-        >
-          {login.username}
+        <Card.Description style={{ color: "purple", display: "flex", flexWrap: "wrap" }}>
+          {location.state}
         </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <div className="ui-buttons">
-          {/* <Button Icon name="heart" basic color="red">
-            Add
-          </Button> */}
-        </div>
       </Card.Content>
     </Card>;
    

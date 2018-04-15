@@ -38,8 +38,21 @@ footer {
 
 .link-wrapper {
   display: flex;
-  align-content: space-between;
+  justify-content: center;
+  margin-left: auto;
   /* bottom: 0; */
+}
+
+.nav-link {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.nav-icon {
+  color: white;
+  text-decoration: none;
 }
 
 .single-user {

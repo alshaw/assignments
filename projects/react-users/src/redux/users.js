@@ -2,12 +2,13 @@ import axios from "axios";
 
 const initialState = {
   data: [],
-  // savedUsers: [],
+  savedUsers: [],
   loading: true,
   errMsg: ""
 }
 
 const userReducer = (state = initialState, action) => {
+  console.log(state.savedUsers)
   switch (action.type) {
     case "GET_USERS":
       return {
@@ -15,12 +16,12 @@ const userReducer = (state = initialState, action) => {
         data: action.users,
         loading: false
       }
-    // case "SAVE_USER":
-    //   return {
-    //     ...state, 
-    //     savedUsers: state.savedUsers + action.user,
-    //     loading: false
-    //   }
+    case "SAVE_USER":
+      return {
+        ...state, 
+        savedUsers: [...state.savedUsers, action.user],
+        loading: false
+      }
     case "ERR_MSG":
     return {
       ...state,
@@ -50,6 +51,15 @@ export const getUsers = () => {
           errMsg: "Sorry, users are not available."
         })
       })
+  }
+}
+
+export const saveUser = (user) => {
+  return dispatch => {
+    dispatch({ 
+      type: "SAVE_USER", 
+      user: user 
+    });
   }
 }
 

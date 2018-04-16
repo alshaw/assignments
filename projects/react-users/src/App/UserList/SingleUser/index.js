@@ -1,6 +1,5 @@
 import React from "react";
-import { Card, Image, Popup, Icon, Button } from "semantic-ui-react";
-// import SingleQuote from "./SingleQuote";
+import { Card, Image, Popup, Button } from "semantic-ui-react";
 import QuoteList from "../../QuoteList";
 
 const style = {
@@ -10,18 +9,23 @@ const style = {
 };
 
 
-function SingleUser(props) {
-  // console.log(props);
-  const { name, picture, location } = props; 
+function SingleUser({ user, saveUser }) {
+  const handleOnClick = () => {
+    saveUser(user)
+  }
+
   const trigger = <Card>
       <Card.Content className="single-user">
-        <Image style={{ border: "1px solid darkgray" }} src={picture.large} />
+        <Image style={{ border: "1px solid darkgray" }} src={user.picture.large} />
         <Card.Header>
-          {name.first} {name.last}
+          {user.name.first} {user.name.last}
         </Card.Header>
         <Card.Description style={{ color: "purple", display: "flex", flexWrap: "wrap" }}>
-          {location.state}
+          {user.location.state}
         </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <Button onClick={handleOnClick} />
       </Card.Content>
     </Card>;
    

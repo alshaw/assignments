@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUsers } from "../../redux/users.js";
+import { getUsers, saveUser } from "../../redux/users.js";
 import SingleUser from "./SingleUser/";
 import "../styles.css";
 
@@ -10,7 +10,7 @@ class UserList extends Component {
   }
   render() {
     const { data, loading, errMsg } = this.props;
-    const userComponents = data.map((user, i) => <SingleUser key={user.name + i} {...user}></SingleUser>)
+    const userComponents = data.map((user, i) => <SingleUser key={user.name + i} user={user} saveUser={this.props.saveUser} ></SingleUser>)
     if (loading) {
       return (
         <div>Loading...</div>
@@ -32,4 +32,4 @@ class UserList extends Component {
     return state.users;
 }
 
-export default connect(mapStateToProps, { getUsers })(UserList);
+export default connect(mapStateToProps, { getUsers, saveUser })(UserList);

@@ -1,7 +1,7 @@
 const express = require("express");
+const bountyRouter = express.Router();
 const uuid = require("uuid");
-let bounties = require("../bounties.js");
-
+let bounties = require("../bountyData.js");
 
 bountyRouter
   .route("/")
@@ -23,7 +23,7 @@ bountyRouter
   .post((req, res) => {
     const newBounty = req.body;
     newBounty._id = uuid();
-    Bounties.push(newBounty);
+    bounties.push(newBounty);
     res.status(201).send(newBounty);
   });
 
@@ -42,7 +42,7 @@ bountyRouter
   })
   .put((req, res) => {
     const { id } = req.params;
-    const editedBounties = req.params;
+    let editedBounty = req.body;
     bounties = bounties.map(
       bounty =>
         bounty._id === id
@@ -52,4 +52,4 @@ bountyRouter
     res.status(200).send(editedBounty);
   });
 
-module.exports = bountyReducer;
+module.exports = bountyRouter;

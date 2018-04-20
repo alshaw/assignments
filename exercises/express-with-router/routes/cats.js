@@ -1,51 +1,58 @@
 const express = require("express");
-const uuid = require("uuid");
-let cats = require("../catData.js");
 const catRouter = express.Router();
+const CatModel = require("../models/cats.js");
+const AgencyModel = require("../models/agencies");
 
 catRouter.route("/")
   .get((req, res) => {
-    const { query } = req;
-    const queriedCats = cats.filter(cat => {
-      for (let key in query) {
-        if (
-          !cat.hasOwnProperty(key) ||
-          String(cat[key]).toLowerCase() !== query[key].toLowerCase()
-        ) {
-          return false;
-        }
-      }
-      return true;
-    });
-    res.status(200).send(queriedCats);
+    // CatModel.findById(req.params.id, () => {})
+    CatModel.find(req.query)
+      .populate("agencyId")
+      .exec((err, foundCats) => {
+        if (err) return res.send(err);
+        res.status(200).send(foundCats);
+      })
   })
   .post((req, res) => {
-    const newCat = req.body;
-    newCat._id = uuid();
-    cats.push(newCat);
-    res.status(201).send(newCat);
+    //use save()
+    const newCat = new CatModel(req.body);
+    newCat.save((err, savedCat) => {
+      if (err) return res.send(err);    
+      CatModel.populate(savedCat, { path: "agencyId" }, (err, popCat) => {
+        if (err) return res.send(err);
+        res.status(201).send(popCat);
+      })
   });
 
 catRouter.route("/:id")
   .get((req, res) => {
-    const { id } = req.params;
-    console.log(id);
-    const foundCat = cats.filter(cat => cat._id === id)[0];
-    res.status(200).send(foundCat);
+    //use fineOne()
+    CatModel.findOne({ _id: req.params.id })
+      .populate("agencyId")
+      .exec((err, foundCat) => {
+        if (err) return res.send(err);
+        if (!foundCat) return res.status(404).send({ message: "Cat not found" });
+        res.status(200).send(foundCat);
+    })
   })
 
   .delete((req, res) => {
-    const { id } = req.params;
-    cats = cats.filter(cat => cat._id !== id);
-    res.status(204).send();
+    //use findByIdAndDelete()
+    CatModel.findOneAndRemove({ _id: req.params.id }, (err, deletedCat) => {
+        if (err) return res.send(err);
+        if (!deletedCat) return res.status(404).send({ message: "Cat not found" }) 
+    })
   })
   .put((req, res) => {
-    const { id } = req.params;
-    const editedCat = req.body;
-    cats = cats.map(
-      cat => (cat._id === id ? (editedCat = { ...cat, ...editedCat }) : cat)
-    );
-    res.status(200).send(editedCat);
+    CatModel.findOneAndUpdate({ _id: req.params.id }, req.body, {new: true})
+      .populate("agencyId")
+      .exec((err, updatedCat) => {
+        if (err) return res.send(err);
+        if (!updatedCat) return res.status(404).send({ message: "cat not found" });
+        res.status(200).send(updatedCat);
+      })
+
+      })
   });
 
 module.exports = catRouter;

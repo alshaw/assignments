@@ -1,7 +1,13 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import bountyReducer from "./bounties";
 
-const store = createStore(combineReducers({ bounties: bountyReducer }));
+
+const globalState = {
+  bounties: bountryReducer
+}
+
+const store = createStore(combineReducers({ bounties: bountyReducer }), applyMiddleware(thunk));
 store.subscribe(() => {
   console.log(store.getState());
 });

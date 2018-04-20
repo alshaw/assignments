@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = {
   data: []
 };
@@ -30,7 +32,7 @@ const bountyReducer = (state = initialState, action) => {
 export const addBounty = bounty => {
   return {
     type: "ADD_BOUNTY",
-    post
+    bounty
   };
 };
 
@@ -48,5 +50,25 @@ export const editBounty = (index, newBounty) => {
     newBounty
   };
 };
+
+export const getBounties = () => {
+  return dispatch => {
+    axios.get("/bounties")
+      .then(response => {
+        console.log(response.data);
+        dispatch({
+          type: "GET_BOUNTIES",
+          bounties: response.data.results
+          
+        })
+      })
+      .catch(err => {
+        dispatch({
+          type: "ERR_MSG",
+          errMsg: "Sorry, you're data is unavailable"
+        })
+      })
+  }
+}
 
 export default bountyReducer;

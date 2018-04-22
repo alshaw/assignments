@@ -4,7 +4,6 @@ function Contact(props) {
   return (
     <div className="contact-wrapper">
       <h1>Contact</h1>
-      <p>Drop a line if you want a pointless site like this one.</p>
       <div className="form-container">
         <form action="/action_page.php">
           <label for="fname">First Name</label>

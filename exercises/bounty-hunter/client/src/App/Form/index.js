@@ -6,7 +6,7 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.intialState = {
-      inputs: {
+      input: {
         firstName: "",
         lastName: "",
         isLiving: "",
@@ -24,8 +24,8 @@ class Form extends Component {
     let { name, value } = e.target; 
     this.setState(prevState => {
       return {
-        inputs: {
-          ...prevState.inputs,
+        input: {
+          ...prevState.input,
           [name]: value
         }
       }

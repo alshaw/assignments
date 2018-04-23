@@ -4,7 +4,7 @@ import bountyReducer from "./bounties";
 
 
 const globalState = {
-  bounties: bountryReducer
+  bounties: bountyReducer
 }
 
 const store = createStore(combineReducers({ bounties: bountyReducer }), applyMiddleware(thunk));

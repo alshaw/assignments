@@ -16,7 +16,7 @@ function App(props) {
        <div className="link-wrapper">
           <Switch>
             <Route exact path="/" component={Home}></Route>
-            <Route path="/about/" component={About}></Route>
+            <Route path="/about" component={About}></Route>
             <Route path="/contact" component={Contact}></Route>
           </Switch>
        </div>

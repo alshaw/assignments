@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const initialState = {
-  data: []
+  data: [],
+  loading: true,
+  errMsg: ""
 };
 
 const bountyReducer = (state = initialState, action) => {

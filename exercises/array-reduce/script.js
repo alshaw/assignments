@@ -1,19 +1,23 @@
 // 1. Turn an array or number into a total of all the numbers
 function total(arr) {
-
+  return arr.reduce((total, amount) => total + amount);
 }
 total([1, 2, 3]); // 6
 
-// 2. Turn an array of number into a loing string of all those numbers
+// 2. Turn an array of numbers into a long string of all those numbers
+function numString(total, num) {
+  return total + num.toString();
+}
 
 function stringConcat(arr) {
-
+  return arr.reduce(numString);
 }
-stringConcat([1,2,3]) // "123" 
+
+console.log(stringConcat([1,2,3]))// "123" 
 
 // 3. Turn an array of voter objects into a count of how many people voted
 function totalVotes(arr) {
-
+  
 }
 
 var voters = [  
@@ -30,14 +34,18 @@ var voters = [
     {name: 'Jeff', age: 30, voted: true},
     {name: 'Zack', age: 19, voted: false}
 ];
-totalVotes(voters) // 7 
+console.log(totalVotes(voters));
+
 
 // 4. Given an array of all your wishlist items, figure out how much it would cost 
    // to just buy everything at once
 
 function shoppingSpree(arr) {
-
+  return arr.reduce((total, curr) => {
+    return total + curr.price;
+  }, 0);
 }
+
 var wishlist = [  
     { title: "Tesla Model S", price: 90000 },
     { title: "4 carat diamond ring", price: 45000 },
@@ -50,7 +58,9 @@ shoppingSpree(wishlist) // 227005
 
 // 5. Given an array of arrays, flatten them into a single array
 function flatten(arr) {
-
+  return arr.reduce((total, curr) => {
+    return total.concat(curr);
+  }, []);
 }
 
 var arrays = [  

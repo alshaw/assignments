@@ -16,9 +16,9 @@ header {
   left: 0;
   padding: 1rem;
   padding-left: 70px;
-  background-color: #395899;
+  background-color: #0d4626;
   color: white;
-  border: .5px solid #142e66;
+  border: .5px solid #052712;
 }
 
 footer {
@@ -31,8 +31,8 @@ footer {
   left: 0;
   width: 100%;
   padding: 1rem;
-  background-color: #395899;
-  border: .5px solid #1e3872;
+  background-color: #0d4626;
+  border: .5px solid #052712;
   color: white;
 }
 

@@ -65,7 +65,8 @@ footer {
 }
 
 .home-wrapper {
-  margin-top: 130px;
+  margin-top: 200px;
+  margin-bottom: 30px;
 }
 
 input[type=text],

@@ -7,6 +7,7 @@ function Footer(props) {
       {/* <p>&copy; 2018</p> */}
       <Icon name="heart" size="large" />
       <Icon name="tree" size="large" />
+      
     </footer>;
 }
 

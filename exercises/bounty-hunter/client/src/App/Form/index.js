@@ -2,18 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addBounty } from "../../redux/bounties";
 
+import FormDisplay from "./FormDisplay";
+
 class Form extends Component {
   constructor(props) {
     super(props);
     this.intialState = {
-      input: {
+      inputs: {
         firstName: "",
         lastName: "",
         isLiving: "",
         bountyAmount: "",
         type: "",
       },
-      // bounties: []
+      bounties: []
     }
     this.state = this.initialState;
     this.handleChange = this.handleChange.bind(this);
@@ -21,11 +23,11 @@ class Form extends Component {
   }
 
   handleChange(e) {
-    let { name, value } = e.target; 
+    const { name, value } = e.target; 
     this.setState(prevState => {
       return {
-        input: {
-          ...prevState.input,
+        inputs: {
+          ...prevState.inputs,
           [name]: value
         }
       }
@@ -44,15 +46,14 @@ class Form extends Component {
   }
 
   render() {
-    const { firstName, lastName, isLiving, bountyAmount, type } = this.intialState.inputs;
-    return <form onSubmit={this.handleSubmit} className="form-wrapper">
-      <input onChange={this.handleChange} name="firstName" placeholder="First Name" value={firstName} type="text"/>
-      <input onChange={this.handleChange} name="lastName" placeholder="Last Name" value={lastName} type="text"/>
-      <input onChange={this.handleChange} name="isLiving" placeholder="Still Living?" value={isLiving} type="text"/>
-      <input onChange={this.handleChange} name="bountyAmount" placeholder="Bounty Amount" value={bountyAmount} type="text"/>
-      <input onChange={this.handleChange} name="type" placeholder="Sith or Jedi?" value={type} type="text"/>
-      <button className="form-submit">Submit</button>
-      </form>
+    const props = {
+      handleSubmit: this.handleSubmit,
+      handleChange: this.handleChange,
+      ...this.state
+    }
+    return (
+      <FormDisplay {...props}></FormDisplay>
+    )
   }
 }
 

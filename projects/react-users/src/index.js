@@ -5,6 +5,7 @@ import store from "./redux/index.js";
 import { BrowserRouter } from "react-router-dom";
 import "semantic-ui-css/components/icon.min.css";
 import "semantic-ui-css/components/popup.min.css";
+// import "semantic-ui-css/components/card.min.css";
 
 import App from "./App";
 

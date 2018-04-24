@@ -4,13 +4,14 @@ import { connect } from "react-redux";
 import { Icon } from "semantic-ui-react";
 
 function Header(props) {
-  return (
-    <header>
+  return <header>
       <h1 style={{ fontSize: "40px" }} className="title">
-        happy campers
+        Swansonites
       </h1>
       <nav className="link-wrapper">
-        <p>{props.savedUsers.length}</p>
+        <Link to="/contact" className="nav-link">
+          <Icon name="users" className="nav-icon" size="large" corner as={props.savedUsers.length} />
+        </Link>
         <Link to="/" className="nav-link">
           <Icon name="home" className="nav-icon" size="large" />
         </Link>
@@ -21,8 +22,7 @@ function Header(props) {
           <Icon name="talk" className="nav-icon" size="large" />
         </Link>
       </nav>
-    </header>
-  );
+    </header>;
 }
 const mapStateToProps = state => {
   return {

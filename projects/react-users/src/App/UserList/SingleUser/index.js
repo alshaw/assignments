@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image, Popup, Button } from "semantic-ui-react";
+import { Card, Image, Popup, Icon } from "semantic-ui-react";
 import QuoteList from "../../QuoteList";
 
 const style = {
@@ -20,12 +20,15 @@ function SingleUser({ user, saveUser }) {
         <Card.Header>
           {user.name.first} {user.name.last}
         </Card.Header>
-        <Card.Description style={{ color: "purple", display: "flex", flexWrap: "wrap" }}>
+        <Card.Description
+          style={{ color: "purple", display: "flex", flexWrap: "wrap" }}
+        >
           {user.location.state}
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Button onClick={handleOnClick} />
+        <Icon link="true" name="heart" size="large" color="red" onClick={handleOnClick} />
+        <Icon link="true" name="remove" size="large" color="black" floated="right" onClick={handleOnClick} />
       </Card.Content>
     </Card>;
    

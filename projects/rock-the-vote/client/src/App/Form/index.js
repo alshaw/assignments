@@ -54,7 +54,7 @@ class Form extends Component {
    render() {
       let { title, description } = this.state.inputs
       return <div className="container">
-           <h1>Political issue:</h1>
+           <h4>Political issue:</h4>
           <form onSubmit={this.handleSubmit}>
             <input onChange={this.handleChange} type="text" name="title" value={title} placeholder="Title" />
             <textarea onChange={this.handleChange} type="text" name="description" value={description} placeholder="Description" />

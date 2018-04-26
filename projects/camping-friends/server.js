@@ -1,8 +1,10 @@
+//dependencies
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-
 const logger = require("./middleware/logger.js");
+
+//create instances
 const camperRouter = require("./routes/campers.js");
 // const teamRouter = require("./routes/teams.js")
 

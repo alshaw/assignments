@@ -3,9 +3,15 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const camperSchema = new Schema({
-  name: String,
-  favCampingSpot: String,
-})
+  name: {
+    type: String, 
+    required: true
+  },
+  spots: [{
+    type: Schema.Types.ObjectId,
+    ref: "Spots"
+  }]
+});
 
-const CamperModel = mongoose.model("campers", camperSchema);
-module.exports = CamperModel;
+module.exports = mongoose.model("Camper", camperSchema);
+

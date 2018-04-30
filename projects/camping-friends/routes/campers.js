@@ -19,16 +19,25 @@ camperRouter.post("/", (req, res) => {
 })
 
 camperRouter.get("/:id", (req, res) => {
+  Camper.findById(req.params.id)
+    .populate("spots")
+    .exec((err, camper) => {
+      if (err) return res.status(500).send(err);
+      return res.send(camper);
+    });
+});
+
+camperRouter.put("/:id", (req, res) => {
   Camper.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedCamper) => {
     if (err) return res.status(500).send(err);
     return res.send(updatedCamper)
   })
 })
 
-camperRouter.put("/:id", (req, res) => {
-  Camper.findByIdAndRemove(req.params.id, (err, removeCamper) => {
+camperRouter.delete("/:id", (req, res) => {
+  Camper.findByIdAndRemove(req.params.id, (err, removedCamper) => {
     if (err) return res.status(500).send(err);
-    return res.send(removeSpot)
+    return res.send(removedCamper)
   })
 })
 

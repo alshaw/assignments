@@ -1,12 +1,13 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import camperReducer from "./campers.js";
+import itemReducer from "./items.js";
 
-const store = createStore(
-  combineReducers({ campers: camperReducer }),
-  applyMiddleware(thunk)
-);
+const globalState = {
+  items: itemReducer
+};
+
+const store = createStore(itemReducer, applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 

@@ -7,7 +7,7 @@ const globalState = {
   items: itemReducer
 };
 
-const store = createStore(itemReducer, applyMiddleware(thunk));
+const store = createStore(combineReducers({ items: itemReducer }), applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 

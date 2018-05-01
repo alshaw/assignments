@@ -28,14 +28,14 @@ class Item extends Component {
       return (
         <div className="edit-form">
           <EditForm {...this.props} options={{ toggle: this.toggleEdit }} />
-          <button onClick={this.toggleEdit}>Cancel</button>
-          <button onClick={this.toggleEdit}>Close</button>
+          <button className="close-button" onClick={this.toggleEdit}>Close</button>
         </div>
       );
     }
     return <div className="items-list">
         <div className="description">
-          <h3>{description} {price}</h3>
+          <h3>{description}</h3>
+          <h4>${price}</h4>
         </div>
         <div className="buttons">
           <button className="edit-button" onClick={this.toggleEdit}>

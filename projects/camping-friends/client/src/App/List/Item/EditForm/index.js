@@ -16,6 +16,7 @@ class EditForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearInputs = this.clearInputs.bind(this);
   }
+
   handleChange(e) {
     const { value, name } = e.target;
     this.setState(prevState => {
@@ -54,7 +55,7 @@ class EditForm extends Component {
   render() {
     const { description, price } = this.state.inputs;
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
+      <form className="edit-form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange}
           name="description"
@@ -69,7 +70,7 @@ class EditForm extends Component {
           type="text"
           placeholder="Enter price"
         />
-        <button className="submit">Save</button>
+        <button className="close-button">Save</button>
       </form>
     )
   }

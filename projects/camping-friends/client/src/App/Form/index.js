@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import FormDisplay from "./FormDisplay";
+import { connect } from "react-redux";
+import { addItem } from "../../redux/items";
 
 class Form extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class Form extends Component {
   }
 
   handleChange(e) {
-    const { value, name } = e.target;
+    const { name, value } = e.target;
     this.setState(prevState => {
       return {
         inputs: {
@@ -29,12 +31,8 @@ class Form extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.setState(prevState => {
-      return {
-        inputs: this.initialState.inputs,
-        items: [...prevState.items, prevState.inputs]
-      }
-    })
+    this.props.addItem(this.state.inputs);
+    this.setState(this.initialState);
   }
   render() {
     const props = {
@@ -48,4 +46,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default connect(null, { addItem })(Form);

@@ -9,10 +9,12 @@ class List extends Component {
   }
   render() {
     const { data, loading, errMsg } = this.props;
-    const itemComponents = data.map((items, i) => <Item key={items.description + i} {...items}></Item>)
+    const itemComponents = data.map((item, i) => {
+      return <Item key={i} {...item}></Item>
+    })
     if (loading) {
       return (
-        <div>...Loading
+        <div className="loading">...Loading
         </div>
       )
     } else if (errMsg) {
@@ -21,7 +23,7 @@ class List extends Component {
         )
     } else {
         return (
-          <div>
+          <div className="list">
             {itemComponents}
           </div>
         )
@@ -31,6 +33,6 @@ class List extends Component {
 
 const mapStateToProps = state => {
   return state.items;
-}
+};
 
-export default connect(mapStateToProps, { getItems }) (List);
+export default connect(mapStateToProps, { getItems })(List);

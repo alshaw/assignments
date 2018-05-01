@@ -1,82 +1,114 @@
 import axios from "axios";
+const url = "/items/";
 
-const initialItemState = {
-  data: [],
-  loading: true,
-  errMsg: ""
-}
-
-const itemReducer = (state = initialItemState, action) => {
-  switch (action.type) {
-    // case "GET_ITEMS": 
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     data: action.items
-    //   }
-    case "ADD_ITEM":
-      return {
-        data: [...state.data, action.item]
-      }
-    case "REMOVE_ITEM":
-      return {
-        data: state.data.filter((item, i) => i !== action.index)
-      }
-    case "EDIT_ITEM":
-      return {
-        data: state.data.map((item, i) => {
-          if (i === action.index) {
-            return action.newItem;
-          } else {
-            return item;
-          }
-        })
-      }
-    default: return state;
-  }
-}
-
-export const addItem = item => {
-  return {
-    type: "ADD_ITEM",
-    item
-  }
-}
-
-export const editItem = (index, newItem) => {
-  return {
-    type: "EDIT_ITEM",
-    index,
-    newItem
-  }
-}
-
-export const removeItem = index => {
-  return {
-    type: "REMOVE_ITEM",
-    index
-  }
-}
-
-export const getItems = () => {
+export function getItems() {
   return dispatch => {
-    axios.get("/items")
+    axios
+      .get(url)
       .then(response => {
         console.log(response.data);
-        dispatch({ 
-          type: "GET_ITEMS", 
-          items: response.data.results
+        dispatch({
+          type: "GET_ITEMS",
+          items: response.data
         });
       })
       .catch(err => {
-        dispatch({
-          type: "ERR_MSG",
-          err: "Data unavailable"
-        })
-      })
-  }
+        console.error(err);
+      });
+  };
 }
 
+export function addItem(newItem) {
+  return dispatch => {
+    axios
+      .post(url, newItem)
+      .then(response => {
+        console.log(response);
+        let { data } = response;
+        dispatch({
+          type: "ADD_ITEM",
+          data
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+}
 
+export function editItem(editedItem, id) {
+  return dispatch => {
+    console.log(editedItem);
+    axios
+      .put(url + id, editedItem)
+      .then(response => {
+        console.log(response);
+        dispatch({
+          type: "EDIT_ITEM",
+          editedItem: response.data,
+          id
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+}
 
-export default itemReducer;
+export function removeItem(id) {
+  return dispatch => {
+    axios
+      .delete(url + id, id)
+      .then(response => {
+        dispatch({
+          type: "REMOVE_ITEM",
+          id
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  };
+}
+
+export default function itemsReducer(
+  prevState = { data: [], loading: true },
+  action
+) {
+  switch (action.type) {
+    case "GET_ITEMS":
+      return {
+        data: action.items,
+        loading: false
+      };
+
+    case "ADD_ITEM":
+      return {
+        data: [...prevState.data, action.data],
+        loading: false
+      };
+
+    case "EDIT_ITEM":
+      return {
+        data: prevState.data.map(item => {
+          if (item._id === action.id) {
+            return action.editedItem;
+          } else {
+            return item;
+          }
+        }),
+        loading: false
+      };
+
+    case "REMOVE_ITEM":
+      return {
+        data: prevState.data.filter(item => {
+          return item._id !== action.id;
+        }),
+        loading: false
+      };
+
+    default:
+      return prevState;
+  }
+}

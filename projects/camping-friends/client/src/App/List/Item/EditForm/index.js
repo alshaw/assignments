@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editItem } from "../../../../redux/items.js";
+import { addItem, editItem } from "../../../../redux/items.js";
 
 class EditForm extends Component {
   constructor(props) {
     super(props);
+    const { description, price } = props;
     this.state = {
       inputs: {
-        description: props.description,
-        price: props.price
+        description: description || "",
+        price: price || ""
       }
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearInputs = this.clearInputs.bind(this);
   }
   handleChange(e) {
     const { value, name } = e.target;
@@ -27,13 +29,32 @@ class EditForm extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { index, editItem } = this.props;
-    editItem(index, this.state.inputs);
+    const { _id, addItem, editItem, clear, add } = this.props;
+    if (add) {
+      addItem(this.state.inputs)
+    } else {
+      editItem(this.state.inputs, _id)
+    }
+    if (clear) {
+      this.clearInputs();
+    }
+    // editItem(index, this.state.inputs);
   }
+
+  clearInputs() {
+    this.setState({
+      inputs: {
+        description: "",
+        price: ""
+      }
+    })
+  }
+
+
   render() {
     const { description, price } = this.state.inputs;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange}
           name="description"
@@ -48,10 +69,10 @@ class EditForm extends Component {
           type="text"
           placeholder="Enter price"
         />
-        <button>Submit Changes</button>
+        <button className="submit">Save</button>
       </form>
     )
   }
 }
 
-export default connect(null, { editItem}) (EditForm);
+export default connect(null, { addItem, editItem }) (EditForm);

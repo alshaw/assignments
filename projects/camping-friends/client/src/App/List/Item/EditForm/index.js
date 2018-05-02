@@ -70,7 +70,7 @@ class EditForm extends Component {
           type="text"
           placeholder="Enter price"
         />
-        <button className="close-button">Save</button>
+        <button className="save-button">Save</button>
       </form>
     )
   }

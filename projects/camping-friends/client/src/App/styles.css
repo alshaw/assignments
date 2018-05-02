@@ -28,9 +28,9 @@ header {
   right: 0;
   left: 0;
   padding: 1rem;
-  padding-left: 70px;
+  padding-left: 20px;
   color: white;
-  font-size: 40px;
+  font-size: 37px;
 }
 .loading {
   color: white;
@@ -43,6 +43,11 @@ header {
 .edit-form {
   justify-content: center;
   font-family: "Roboto Slab", serif;
+  padding: 10px 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
 }
 
 /* .submit-form {
@@ -95,7 +100,14 @@ select {
 }
 
 .close-button {
-  width: 15%;
+  width: 22%;
+  background-color: rgb(67, 94, 68);
+  color: white;
+  padding: 9px 10px;
+  border-radius: 4px;
+}
+.save-button {
+  width: 30%;
   background-color: rgb(67, 94, 68);
   color: white;
   padding: 9px 10px;
@@ -123,4 +135,22 @@ select {
 .list {
   display: flex;
   flex-direction: column-reverse;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.about-page {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  margin: 20px;
+  padding: 10px 20px;
 }

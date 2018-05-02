@@ -106,6 +106,7 @@ select {
   padding: 9px 10px;
   border-radius: 4px;
 }
+
 .save-button {
   width: 30%;
   background-color: rgb(67, 94, 68);
@@ -114,8 +115,29 @@ select {
   border-radius: 4px;
 }
 
+.delete-button:hover {
+  background-color: rgb(182, 35, 35);
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: rgb(81, 128, 67);
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: rgb(81, 128, 67);
+  cursor: pointer;
+}
+
+.save-button:hover{
+  background-color: rgb(81, 128, 67);
+  cursor: pointer;
+}
+
 .submit:hover {
   background-color: #477e4a;
+  cursor: pointer;
 }
 
 .input {

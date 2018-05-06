@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const issuesRouter = require("./routes/issues");
+const issueRouter = require("./routes/issues");
 let app = express();
 const port = 3001;
 // const logger = require("./middleware/logger.js");
@@ -12,7 +12,7 @@ const port = 3001;
 app.use(bodyParser.json());
 // app.use(logger)
 // Routes
-app.use("/issues", issuesRouter);
+app.use("/issues", issueRouter);
 // app.use("/comments", commentsRouter)
 
 mongoose.connect("mongodb://localhost:27017/issues", err => {

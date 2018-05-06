@@ -1,25 +1,26 @@
-import React, { Component } from 'react'
-import { connect } from "react-redux"
-import { addIssue, editIssue } from "../../redux/issues"
+import React, { Component } from "react";
+import FormDisplay from "./FormDisplay";
+import { connect } from "react-redux";
+import { addIssue } from "../../redux/issues";
 
 
 class Form extends Component {
   constructor(props) {
     super(props)
-    let { title, description } = props
-    this.state = {
+    this.initialState = {
       inputs: {
-        title: title || "",
-        description: description || ""
-      }
+        title: "",
+        description: ""
+      },
+      issues: []
     }
+    this.state = this.initialState;
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.clearInputs = this.clearInputs.bind(this)
   }
 
-  handleChange(event) {
-    let { name, value } = event.target
+  handleChange(e) {
+    const { name, value } = e.target
     this.setState((prevState) => {
       return {
         inputs: {
@@ -30,40 +31,22 @@ class Form extends Component {
     })
   }
 
-  handleSubmit(event) {
-    event.preventDefault()
-    let { _id, addIssue, editIssue, clear, add  } = this.props
-      if (add) {
-        addIssue(this.state.inputs)
-        } else {
-          editIssue(this.state.inputs, _id)
-        }
-        if (clear) {
-          this.clearInputs()
-        }
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.addIssue(this.state.inputs)
+    this.setState(this.initialState)
   }
 
-  clearInputs() {
-    this.setState({
-      inputs: {
-      title: "",
-      description: ""
-      }
-    })
-  }
    render() {
-      let { title, description } = this.state.inputs
-      return <div className="container">
-           <h4>Political issue:</h4>
-          <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} type="text" name="title" value={title} placeholder="Title" />
-            <textarea onChange={this.handleChange} type="text" name="description" value={description} placeholder="Description" />
-            <div className="row">
-            <button>Submit</button>
-            </div>
-          </form>
-        </div>;
+     const props = {
+       handleSubmit: this.handleSubmit,
+       handleChange: this.handleChange,
+       ...this.state
+     }
+      return (
+        <FormDisplay {...props}></FormDisplay>
+      )
    }
 }
 
-export default connect(null, ({ addIssue, editIssue }))(Form)
+export default connect(null, { addIssue })(Form);

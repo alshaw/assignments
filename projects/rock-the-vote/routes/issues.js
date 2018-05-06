@@ -1,62 +1,43 @@
 const express = require("express");
-const issuesRouter = express.Router();
+const issueRouter = express.Router();
 const bodyParser = require("body-parser");
 const Issue = require("../models/issue.js");
 
-issuesRouter.route("/")
-  // return all issues matching query
-  .get((req, res) => {
-    Issue.find((err, foundIssues) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send(foundIssues);
-    });
+issueRouter.get("/", (req, res) => {
+  Issue.find((err, issues) => {
+    if (err) return res.status(500).send(err)
+    return res.send(issues)
   })
+})
 
-  // add new issue
-  .post((req, res) => {
-    let newIssue = new Issue(req.body);
-    newIssue.save((err, savedIssue) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send(savedIssue);
-    });
-  });
-
-issuesRouter
-  .route("/:id")
-  // return specific issue
-  .get((req, res) => {
-    let { id } = req.params;
-    Issue.findById(id, (err, foundIssue) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send(foundIssue);
-    });
+issueRouter.post("/", (req, res) => {
+  const newIssues = new Issue (req.body);
+  newIssues.save(err => {
+    if (err) return res.status(500).send(err)
+    return res.send(newIssues)
   })
+})
 
-  .delete((req, res) => {
-    let { id } = req.params;
-    Issue.findByIdAndRemove(id, (err, removeIssue) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send(removeIssue);
-    });
+issueRouter.get("/:id", (req, res) => {
+  Issue.findById(req.params.id)
+    .exec((err, issue) => {
+      if (err) return res.status(500).send(err)
+      return res.send(issue)
+    })
+})
+
+issueRouter.put("/:id", (req, res) => {
+  Issue.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedIssue) => {
+    if (err) return res.status(500).send(err)
+    return res.send(updatedIssue)
   })
+})
 
-  // update issue
-  .put((req, res) => {
-    let { id } = req.params;
-    Issue.findByIdAndUpdate(id, req.body, { new: true }, (err, updateIssue) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
-      return res.send(updateIssue);
-    });
-  });
+issueRouter.delete("/:id", (req, res) => {
+  Issue.findByIdAndRemove(req.params.id, (err, removedIssue) => {
+    if (err) return res.status(500).send(err)
+    return res.send(removedIssue)
+  })
+})
 
-module.exports = issuesRouter;
+module.exports = issueRouter;

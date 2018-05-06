@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "http://localhost:5050/issues/";
+const url = "http://localhost:3001/issues/";
 
 export function addComment(id, text) {
   return dispatch => {

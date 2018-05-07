@@ -11,21 +11,21 @@
 }
 
 .full-name{
-  padding-top: 20vh;
+  padding-top: 25vh;
   font-weight: 800px;
   font-size: 100px;
-  line-height: 60px;
+  line-height: 70px;
   /* color: #A7D3DD; */
   color: #E0BC4E;
-  padding-left: 10vh;
+  padding-left: 27vh;
   display: flex;
-  
+  flex-wrap: wrap;
 }
-
 .as-logo{
-  max-width: 100px;
-  max-height: 100px;
-  /* padding-left: 45vh; */
+  max-width: 80px;
+  max-height: 80px;
+  display: flex;
+  padding-left: 35vh;
 }
 
 .header {
@@ -40,28 +40,15 @@
   padding: 1rem;
   padding-left: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin-left: auto;
 }
 
-.landing {
+/* .landing {
   display: flex;
-}
+  flex-wrap: wrap;
+} */
 
-.nav-link {
-  padding-top: 2vh;
-  text-decoration: none;
-  color: rgb(46, 44, 44);
-  font-size: 20px;
-  display: flex;
-  align-self: flex-end;
-  /* justify-content: space-around; */
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 .projects-div {
   display: flex;
@@ -76,8 +63,9 @@
 .contact-links {
   padding-top: 2vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   padding-bottom: 2vh;
+  margin-right: 12vh;
 }
 
 .project{
@@ -106,12 +94,24 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-  .full-name {
+  .landing {
     font-size: 80px;
   }
   .as-logo {
     max-width: 100px;
     max-height: 100px;
+  }
+  .header {
+    right: 0;
+  }
+  .projects-div {
+    align-content: center;
+  }
+  .full-name {
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    padding-left: 7vh;
   }
 }
 
@@ -125,6 +125,6 @@ footer {
     display: flex;
     flex-direction: column;
     font-size: 100px;
-    align-items: center;
+    /* align-items: center; */
   }
 }

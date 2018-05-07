@@ -5,7 +5,7 @@ import reactUsers from "../assets/react-users.png";
 
 function Projects(props) {
   return <div className="projects-div">
-      <a href="https://camping-list.herokuapp.com/" target="_blank">
+      <a href="https://react-users.surge.sh/" target="_blank">
         <img className="project" src={reactUsers} alt="react users app" />
       </a>
       <a href="https://camping-list.herokuapp.com/" target="_blank">

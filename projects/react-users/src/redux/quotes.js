@@ -25,7 +25,7 @@ const quoteReducer = (state = initialState, action) => {
   }
 };
 
-const userUrl = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
+const userUrl = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 
 export const getQuotes = () => {
   return dispatch => {

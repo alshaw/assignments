@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+* {
+  font-family: 'Lato',
+  sans-serif;
+}
+
+.full-name{
+  font-weight: 800px;
+  font-size: 40px;
+  line-height: 60px;
+  /* color: #A7D3DD; */
+  color: #E0BC4E;
+}
+
+.first-name{
+  margin-bottom: 0;
+}
+
+.last-name{
+  margin-top: 0;
+}
+
+.as-logo{
+  size: 30px;
+}

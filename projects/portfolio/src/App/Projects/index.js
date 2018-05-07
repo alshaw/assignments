@@ -4,12 +4,15 @@ import { Grid } from "semantic-ui-react";
 import list from "../assets/camping-list.png";
 
 function Projects(props) {
-  return <div>
+  return <div className="projects-div">
       <Link to="https://camping-list.herokuapp.com/">
-        <img className="grid" src={list} alt="list" />
+        <img className="project" src={list} alt="list" />
       </Link>
       <Link to="https://camping-list.herokuapp.com/">
-        <img className="grid" src={list} alt="list" />
+        <img className="project" src={list} alt="list" />
+      </Link>
+      <Link to="https://camping-list.herokuapp.com/">
+        <img className="project" src={list} alt="list" />
       </Link>
     </div>;
 }

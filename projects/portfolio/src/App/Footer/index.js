@@ -1,12 +1,11 @@
 import React from "react";
+import { Icon } from "semantic-ui-react";
 
 
 function Footer(props) {
-  return (
-    <footer>
+  return <footer>
       <p>&copy; 2018</p>
-    </footer>
-  );
+    </footer>;
 }
 
 export default Footer;

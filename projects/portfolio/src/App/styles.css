@@ -3,44 +3,59 @@
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+}
+
+.app-wrapper {
   font-family: 'Lato',
   sans-serif;
 }
 
 .full-name{
-  padding-top: 21vh;
+  padding-top: 20vh;
   font-weight: 800px;
   font-size: 100px;
   line-height: 60px;
   /* color: #A7D3DD; */
   color: #E0BC4E;
   padding-left: 10vh;
+  display: flex;
+  
 }
 
 .as-logo{
   max-width: 100px;
   max-height: 100px;
-  padding-left: 21vh;
+  /* padding-left: 45vh; */
 }
 
-nav {
+.header {
   display: flex;
   justify-content: space-around;
   background-color: #E0BC4E;
+  border: 1px solid rgb(141, 125, 78);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   padding: 1rem;
-  padding-left: 70px;
+  padding-left: 100px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.landing {
+  display: flex;
 }
 
 .nav-link {
   padding-top: 2vh;
   text-decoration: none;
   color: rgb(46, 44, 44);
-  font-size: 15px;
+  font-size: 20px;
+  display: flex;
   align-self: flex-end;
+  /* justify-content: space-around; */
 }
 
 .nav-link:hover {
@@ -54,18 +69,20 @@ nav {
   justify-content: space-around;
   align-self: flex-end;
   flex-wrap: wrap;
+  padding-top: 5vh;
+  padding-bottom: 7vh;
 }
 
 .contact-links {
-  padding-top: 21vh;
+  padding-top: 2vh;
   display: flex;
   justify-content: center;
-  padding-bottom: 10vh;
+  padding-bottom: 2vh;
 }
 
 .project{
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 370px;
+  max-height: 370px;
 }
 .project:hover{
   transition: all 1s ease;
@@ -84,6 +101,7 @@ footer {
   width: 100%;
   padding: 1rem;
   background-color: #E0BC4E;
+  border: 1px solid rgb(141, 125, 78);
   color: white;
 }
 

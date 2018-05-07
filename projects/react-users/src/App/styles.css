@@ -71,6 +71,7 @@ footer {
   background-color: rgb(211, 206, 206);
 }
 .group-card{
+  margin-top: 10vh;
   display: flex;
   justify-content: space-around;
   /* align-items: center; */

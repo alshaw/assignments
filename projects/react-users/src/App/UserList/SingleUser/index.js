@@ -27,8 +27,8 @@ function SingleUser({ user, saveUser }) {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Icon link="true" name="heart" size="large" color="red" onClick={handleOnClick} />
-        <Icon link="true" name="remove" size="large" color="black" floated="right" onClick={handleOnClick} />
+        {/* <Icon link="true" name="heart" size="large" color="red" onClick={handleOnClick} />
+        <Icon link="true" name="remove" size="large" color="black" floated="right" onClick={handleOnClick} /> */}
       </Card.Content>
     </Card>;
    

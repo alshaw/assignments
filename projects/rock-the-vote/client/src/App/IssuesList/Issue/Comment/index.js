@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addComment } from "../../../../redux/comments";
 
-class Comment extends Component() {
+class Comment extends Component {
   constructor(props) {
     super(props)
     const { comment } = props;
@@ -30,7 +30,37 @@ class Comment extends Component() {
   handleSubmit(e) {
     e.preventDefault();
     const { _id, addComment, clear, add } = this.props;
+    if (add) {
+      addComment(this.state.inputs)
+    } else if (clear) {
+      this.clearInputs();
+    }
+  }
+
+  clearInputs() {
+    this.setState({
+      inputs: {
+        title: "",
+        description: ""
+      }
+    })
+  }
+
+  render() {
+    const { comment } = this.state.inputs;
+    return (
+      <form className="edit-form" onSubmit={this.handleSubmit}>
+        <input 
+          onChange={this.handleChange}
+          name="comment"
+          value={comment}
+          type="text"
+          placeholder="Comment"
+        />
+        <button>Save Changes</button>
+      </form>
+    )
   }
 }
 
-export default Comment;
+export default connect(null, { addComment })(Comment);

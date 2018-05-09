@@ -67,15 +67,15 @@ class Issue extends Component {
               <Feed.Like />
             </Feed.Meta>
           </Feed.Content>
-          <Button color="green">
+          <button>
             Comment
-          </Button>
-          <Button onClick={this.toggleEdit}>
+          </button>
+          <button onClick={this.toggleEdit}>
             Edit Issue
-          </Button>
-          <Button color="red" onClick={() => deleteIssue(_id)}>
+          </button>
+          <button onClick={() => deleteIssue(_id)}>
             Delete
-          </Button>
+          </button>
         </Feed.Event>
       </Feed>
     );

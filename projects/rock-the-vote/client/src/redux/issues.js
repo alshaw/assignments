@@ -2,7 +2,6 @@ import axios from "axios";
 const url = "/issues/";
 
 export function getIssues() {
-  console.log("getting issues");
   return dispatch => {
     axios
       .get(url)

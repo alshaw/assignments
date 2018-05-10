@@ -68,7 +68,7 @@ class EditForm extends Component {
           type="text"
           placeholder="Description"
         />
-        <button>Save Changes</button>
+        <button className="submit">Save Changes</button>
       </form>
     )
   }

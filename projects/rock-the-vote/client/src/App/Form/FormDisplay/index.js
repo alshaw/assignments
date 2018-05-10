@@ -7,7 +7,7 @@ function FormDisplay(props) {
     <form className="input" onSubmit={handleSubmit}>
       <input onChange={handleChange} type="text" name="title" value={title} placeholder="Title" />
       <textarea onChange={handleChange} type="text" name="description" value={description} placeholder="Description" />
-      <button>Submit</button>
+      <button className="submit">Submit</button>
     </form>
   )
 }

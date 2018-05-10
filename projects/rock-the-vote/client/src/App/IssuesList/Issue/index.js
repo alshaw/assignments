@@ -38,23 +38,15 @@ class Issue extends Component {
       );
     }
 
-    return (
-      <Feed>
-        {upvotes}
+    return <Feed>
+        {/* {upvotes} */}
         <Feed.Event>
           <Feed.Label>
-            <Button
-              icon
-              onClick={() => editIssue({ upvotes: upvotes + 1 }, _id)}
-              name="upvote"
-            >
+            <Button icon name="upvote" onClick={() => editIssue({ upvotes: upvotes + 1 }, _id)}>
               <Icon name="chevron up" />
             </Button>
-            <Button
-              icon
-              onClick={() => editIssue({ upvotes: upvotes - 1 }, _id)}
-              name="downvote"
-            >
+            <div className="upvote">{upvotes}</div>
+            <Button icon name="downvote" onClick={() => editIssue({ upvotes: upvotes - 1 }, _id)}>
               <Icon name="chevron down" />
             </Button>
           </Feed.Label>
@@ -62,23 +54,17 @@ class Issue extends Component {
             <Feed.Summary>
               <Feed.User>{title}</Feed.User>
             </Feed.Summary>
-            <Feed.Meta>
-              {description}
-              <Feed.Like />
-            </Feed.Meta>
+            <Feed.Meta>{description}</Feed.Meta>
           </Feed.Content>
-          <button>
-            Comment
-          </button>
-          <button onClick={this.toggleEdit}>
+          <button className="submit">Comment</button>
+          <button className="submit" onClick={this.toggleEdit}>
             Edit Issue
           </button>
-          <button onClick={() => deleteIssue(_id)}>
+          <button className="submit" onClick={() => deleteIssue(_id)}>
             Delete
           </button>
         </Feed.Event>
-      </Feed>
-    );
+      </Feed>;
   }
 }
 

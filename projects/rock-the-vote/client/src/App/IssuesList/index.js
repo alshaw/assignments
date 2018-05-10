@@ -6,6 +6,7 @@ import Issue from './Issue'
 class IssuesList extends Component {
   componentDidMount() {
     console.log(this.props.getIssues())
+    console.log("props", this.props)
   }
   render() {
     console.log(this.props)

@@ -4,27 +4,40 @@ const bodyParser = require("body-parser");
 const Comment = require("../models/comment");
 
 // GET route which queries by issueId
-commentsRouter.route("/:issueId").get((req, res) => {
-  Comment.find({
-      issueId: req.params.issueId
-  },(err, foundComments) => {
-      if (err) {
-        console.error(err);
-      } else {
-        res.send(foundComments);
-      }
-    }
-  );
-});
-commentsRouter.route("/").post((req, res) => {
-  let newComment = new Comment(req.body);
-  newComment.save((err, savedComment) => {
-    if (err) {
-      console.error(err);
-    } else {
-      res.send(savedComment);
-    }
-  });
-});
+commentsRouter.get((req, res) => {
+  Comment.find((err, comments) => {
+    if (err) return res.status(500).send(err);
+    return res.send(comments);
+  })
+})
+
+commentsRouter.post("/", (req, res) => {
+  const newComment = new Comment(req.body);
+  newComment.save(err => {
+    if (err) return res.status(500).send(err)
+    return res.send(newComment)
+  })
+})
+
+commentsRouter.get(":/id", (req, res) => {
+  Comment.findById(req.params.id, req.body, {new: true}, (err, updatedComment) => {
+    if (err) return res.status(500).send(err);
+    return res.send(updatedComment);
+  })
+})
+
+commentsRouter.put("/:id", (req, res) => {
+  Comment.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedComment) => {
+    if (err) return res.status(500).send(err);
+    return res.send(updatedComment);
+  })
+})
+
+commentsRouter.delete("/:id", (req, res) => {
+  Comment.findByIdAndRemove(req.params.id, (err, removedComment) => {
+    if (err) return res.status(500).send(err);
+    return res.send(removedComment)
+  })
+})
 
 module.exports = commentsRouter;

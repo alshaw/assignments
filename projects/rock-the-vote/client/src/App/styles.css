@@ -8,13 +8,14 @@
 
 header {
   display: flex;
-  justify-content: center;
-  top: 0;
-  right: 0;
-  left: 0;
   padding: 1rem;
   padding-left: 20px;
-  font-size: 37px;
+  font-size: 40px;
+  background-color: #D2E3F6;
+}
+
+p {
+  margin: 20px;
 }
 
 .edit-form {
@@ -42,6 +43,9 @@ header {
   flex-wrap: wrap;
 }
 
+.input {
+  margin: 20px;
+}
 
 input[type=text],
 select,
@@ -69,7 +73,7 @@ input[type=submit] {
 }
 
 .submit:hover {
-  background-color: #4CAF50;
+  background-color: #D2E3F6;
 }
 
 .container {
@@ -79,8 +83,9 @@ input[type=submit] {
 }
 
 .upvote {
-  margin-left: 1.5vh;
+  margin-left: 1.9vh;
 }
+
 
 /* .col-25 {
   float: left;

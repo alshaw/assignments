@@ -53,7 +53,7 @@ class EditForm extends Component {
   render() {
     const { title, description } = this.state.inputs;
     return (
-      <form className="edit-form" onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange}
           name="title"

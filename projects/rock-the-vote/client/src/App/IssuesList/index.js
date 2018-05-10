@@ -12,22 +12,16 @@ class IssuesList extends Component {
     console.log(this.props)
     let {data} = this.props.issues
     // let sortedIssues = []       
-    const IssueComponent = data.map((issue, i) => {
-      return <Issue {...issue} key={i}></Issue>
-    })
+    const issueComponent = data
+      .map((issue, i) =>
+     <Issue {...issue} key={i}></Issue>)
+
       return (
         <div className="issue-component">
-          { IssueComponent }
+          { issueComponent }
         </div>
       )
   }
 }
-
-
-// const mapStateToProps = (state) => {
-//     return {
-//         data: state.issue
-//     }
-// }
 
 export default connect(state => state, {getIssues})(IssuesList)

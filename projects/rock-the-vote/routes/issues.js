@@ -11,7 +11,7 @@ issueRouter.get("/", (req, res) => {
 })
 
 issueRouter.post("/", (req, res) => {
-  const newIssues = new Issue (req.body);
+  const newIssues = new Issue(req.body);
   newIssues.save(err => {
     if (err) return res.status(500).send(err)
     return res.send(newIssues)
@@ -20,6 +20,7 @@ issueRouter.post("/", (req, res) => {
 
 issueRouter.get("/:id", (req, res) => {
   Issue.findById(req.params.id)
+    .populate("comments")
     .exec((err, issue) => {
       if (err) return res.status(500).send(err)
       return res.send(issue)

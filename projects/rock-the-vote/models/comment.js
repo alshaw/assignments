@@ -3,10 +3,9 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   issueId: {
-    type: Schema.Types.ObjectId,
-    ref: "Issue"
-  },
-  text: String
+    type: String,
+    // ref: "Issue"
+  }
 });
 
 module.exports = mongoose.model("Comment", commentSchema);

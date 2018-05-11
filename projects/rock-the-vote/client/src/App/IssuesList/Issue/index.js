@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Feed, Icon, Button } from "semantic-ui-react";
 import EditForm from "./EditForm";
-// import Comment from "./Comment";
+import Comment from "./Comment";
 import { deleteIssue, editIssue } from "../../../redux/issues";
+// import { addComment } from "../../../redux/comments";
 
 class Issue extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false
+      isEditing: false,
+      isCommenting: false
     };
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.toggleComment = this.toggleComment.bind(this);
   }
 
   toggleEdit() {
@@ -19,6 +22,13 @@ class Issue extends Component {
       isEditing: !this.state.isEditing
     });
   }
+
+  toggleComment() {
+    this.setState({
+      isCommenting: !this.state.isCommenting
+    })
+  }
+
   render() {
     let {
       _id,
@@ -26,7 +36,8 @@ class Issue extends Component {
       description,
       editIssue,
       deleteIssue,
-      upvotes
+      upvotes,
+      addComment
     } = this.props;
 
     if (this.state.isEditing) {
@@ -37,9 +48,16 @@ class Issue extends Component {
       );
     }
 
+    if (this.state.isCommenting) {
+      return (
+        <div>
+          <Comment {...this.props} options={{ toggle: this.toggleComment }} />
+        </div>
+      )
+    }
+
     return <div>
         <Feed>
-          {/* {upvotes} */}
           <Feed.Event>
             <Feed.Label>
               <Button icon name="upvote" onClick={() => editIssue({ upvotes: upvotes + 1 }, _id)}>
@@ -56,18 +74,13 @@ class Issue extends Component {
               </Feed.Summary>
               <Feed.Meta>{description}</Feed.Meta>
             </Feed.Content>
-            {/* <button className="submit">Comment</button>
-          <button className="submit" onClick={this.toggleEdit}>
-            Edit Issue
-          </button>
-          <button className="submit" onClick={() => deleteIssue(_id)}>
-            Delete
-          </button> */}
           </Feed.Event>
         </Feed>
-        <button className="submit">Comment</button>
+        <button className="submit" onClick={this.toggleComment}>
+          Comment
+        </button>
         <button className="submit" onClick={this.toggleEdit}>
-          Edit Issue
+          Edit 
         </button>
         <button className="submit" onClick={() => deleteIssue(_id)}>
           Delete

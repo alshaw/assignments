@@ -57,7 +57,8 @@ class Comment extends Component {
           type="text"
           placeholder="Comment"
         />
-        <button>Save Changes</button>
+        <button>Submit</button>
+        <button>Cancel</button>
       </form>
     )
   }

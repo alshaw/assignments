@@ -17,16 +17,16 @@ class Issue extends Component {
     this.toggleComment = this.toggleComment.bind(this);
   }
 
-  toggleEdit() {
-    this.setState({
-      isEditing: !this.state.isEditing
-    });
+  toggleEdit(e) {
+    if(e.target.id === "submit"){
+      this.setState({
+        isEditing: !this.state.isEditing
+      });
+    }
   }
 
-  toggleComment() {
-    this.setState({
-      isCommenting: !this.state.isCommenting
-    })
+  toggleComment = () => {
+    this.setState(prevState => ({ isCommenting: !prevState.isCommenting}))
   }
 
   render() {
@@ -40,21 +40,11 @@ class Issue extends Component {
       addComment
     } = this.props;
 
-    if (this.state.isEditing) {
-      return (
-        <div>
-          <EditForm {...this.props} options={{ toggle: this.toggleEdit }} />
-        </div>
-      );
-    }
-
-    if (this.state.isCommenting) {
-      return (
-        <div>
-          <Comment {...this.props} options={{ toggle: this.toggleComment }} />
-        </div>
-      )
-    }
+    // if (this.state.isEditing) {
+    //   return <div>
+    //       <EditForm {...this.props} options={{ toggle: this.toggleEdit }} />
+    //     </div>;
+    // }
 
     return <div>
         <Feed>
@@ -77,10 +67,16 @@ class Issue extends Component {
           </Feed.Event>
         </Feed>
         <button className="submit" onClick={this.toggleComment}>
+        {
+          this.state.isCommenting ? <Comment {...this.props} options={{ toggle: this.toggleComment }} /> : null
+        }
           Comment
         </button>
-        <button className="submit" onClick={this.toggleEdit}>
-          Edit 
+        <button id="submit" className="submit" onClick={this.toggleEdit}>
+        {
+          this.state.isEditing ? <EditForm {...this.props} options={{ toggle: this.toggleEdit}} /> : null
+        }
+          Edit
         </button>
         <button className="submit" onClick={() => deleteIssue(_id)}>
           Delete

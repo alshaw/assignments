@@ -29,6 +29,7 @@ class EditForm extends Component {
     })
   }
   handleSubmit(e) {
+    e.persist();
     e.preventDefault();
     const { _id, addIssue, editIssue, clear, add, options } = this.props;
     if (add) {

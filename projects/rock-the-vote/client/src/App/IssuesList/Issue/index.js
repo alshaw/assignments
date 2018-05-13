@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Feed, Icon, Button } from "semantic-ui-react";
 import EditForm from "./EditForm";
 import Comment from "./Comment";
+import CommentList from "./Comment/CommentList";
 import { deleteIssue, editIssue } from "../../../redux/issues";
 
 class Issue extends Component {
@@ -14,6 +15,7 @@ class Issue extends Component {
     };
     this.toggleEdit = this.toggleEdit.bind(this);
     this.toggleComment = this.toggleComment.bind(this);
+    this.toggleViewComment = this.toggleViewComment.bind(this);
   }
 
   toggleEdit(e) {
@@ -26,6 +28,12 @@ class Issue extends Component {
     this.setState(prevState => ({
       isCommenting: !prevState.isCommenting
     })); 
+  }
+
+  toggleViewComment(e) {
+    this.setState(prevState => ({
+      isViewing: !prevState.isViewing
+    }))
   }
 
   render() {
@@ -49,6 +57,12 @@ class Issue extends Component {
     if (this.state.isCommenting) {
       return <div>
         <Comment {...this.props} toggleComment={this.toggleComment}/>
+      </div>
+    }
+
+    if(this.state.isViewing) {
+      return <div>
+        <CommentList {...this.props} toggleViewComment={this.toggleViewComment} />
       </div>
     }
 
@@ -84,6 +98,9 @@ class Issue extends Component {
         </button>
         <button className="submit" onClick={() => deleteIssue(_id)}>
           Delete
+        </button>
+        <button onClick={this.toggleViewComment}>
+          View Comments
         </button>
       </div>;
   }

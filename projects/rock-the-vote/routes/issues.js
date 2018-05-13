@@ -4,7 +4,9 @@ const bodyParser = require("body-parser");
 const Issue = require("../models/issue.js");
 
 issueRouter.get("/", (req, res) => {
-  Issue.find((err, issues) => {
+  Issue.find()
+  .populate("comments")
+  .exec((err, issues) => {
     if (err) return res.status(500).send(err)
     return res.send(issues)
   })

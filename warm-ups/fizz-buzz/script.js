@@ -14,7 +14,6 @@ function fizzBuzz() {
   return numbers;
 }
 
-console.log(fizzBuzz(1));
-
+console.log(fizzBuzz());
 
 

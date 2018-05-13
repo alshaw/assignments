@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addComment } from "../../../../redux/comments";
+import { addComment, editComment } from "../../../../redux/comments";
 
 class Comment extends Component {
   constructor(props) {
     super(props)
     const { comment } = props;
-    this.state = { 
+    this.initialState = { 
       inputs: {
         comment: comment || ""
       }
     }
+    this.state = this.initialState;
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearInputs = this.clearInputs.bind(this);
   }
 
   handleChange(e) {
@@ -29,27 +29,24 @@ class Comment extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { _id, addComment, clear, add } = this.props;
-    if (add) {
-      addComment(this.state.inputs)
-    } else if (clear) {
-      this.clearInputs();
-    }
+    this.props.addComment({...this.state.inputs, issueId: this.props._id})
+    this.setState(this.initialState);
+    this.props.toggleComment();
   }
 
   clearInputs() {
     this.setState({
       inputs: {
-        title: "",
-        description: ""
+        comment: ""
       }
     })
   }
 
   render() {
     const { comment } = this.state.inputs;
+    const { _id } = this.props; 
     return (
-      <form className="edit-form" onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.handleSubmit}>
         <input 
           onChange={this.handleChange}
           name="comment"
@@ -57,7 +54,7 @@ class Comment extends Component {
           type="text"
           placeholder="Comment"
         />
-        <button>Submit</button>
+        <button onClick={() => addComment(_id)}>Submit</button>
         <button>Cancel</button>
       </form>
     )

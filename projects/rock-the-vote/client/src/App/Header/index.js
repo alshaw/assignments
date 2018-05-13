@@ -4,7 +4,7 @@ function Header(props) {
   return <div className="header">
       <header>
         <h1 style={{ fontSize: "40px" }} className="title">
-          Rock the Vote
+          rock the vote
         </h1>
       </header>
       <p>Add, edit or comment on issues.</p>

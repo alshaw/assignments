@@ -3,8 +3,12 @@ const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
   issueId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Issue"
+  },
+  comment: {
     type: String,
-    // ref: "Issue"
+    required: true,
   }
 });
 

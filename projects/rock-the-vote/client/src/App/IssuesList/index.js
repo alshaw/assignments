@@ -10,11 +10,21 @@ class IssuesList extends Component {
   }
   render() {
     console.log(this.props)
-    let {data} = this.props.issues
-    // let sortedIssues = []       
-    const issueComponent = data
-      .map((issue, i) =>
-     <Issue {...issue} key={i}></Issue>)
+    let { data, loading } = this.props.issues
+    let sortedArray = [];
+    if (!loading) {
+      sortedArray = data.sort((num1, num2) => {
+        let num1Total = num1.upvotes - num1.upvotes;
+        let num2Total = num2.upvotes - num2.upvotes;
+        return num2Total - num1Total;
+      });
+    }
+    const issueComponent = data.map((issue, i) => {
+      return <Issue key={i} {...issue} />;
+    });       
+    // const issueComponent = data
+    //   .map((issue, i) =>
+    //  <Issue {...issue} key={i}></Issue>)
 
       return (
         <div className="issue-component">

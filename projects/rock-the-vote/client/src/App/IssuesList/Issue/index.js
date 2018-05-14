@@ -37,8 +37,7 @@ class Issue extends Component {
       editIssue,
       deleteIssue,
       upvotes,
-      downvotes,
-      score
+      downvotes
     } = this.props;
 
     if (this.state.isEditing) {
@@ -55,25 +54,25 @@ class Issue extends Component {
 
 
     return <div>
-          <Feed>
-            <Feed.Event>
-              <Feed.Label>
-                <Button icon name="upvote" onClick={() => editIssue({ upvotes: upvotes + 1 }, _id)}>
-                  <Icon name="chevron up" />
-                </Button>
-                <div className="upvote">{upvotes}</div>
-                <Button icon name="downvote" onClick={() => editIssue({ upvotes: upvotes - 1 }, _id)}>
-                  <Icon name="chevron down" />
-                </Button>
-              </Feed.Label>
-              <Feed.Content>
-                <Feed.Summary>
-                  <Feed.User>{title}</Feed.User>
-                </Feed.Summary>
-                <Feed.Meta>{description}</Feed.Meta>
-              </Feed.Content>
-            </Feed.Event>
-          </Feed>
+        <Feed>
+          <Feed.Event>
+            <Feed.Label>
+              <Button icon name="upvote" onClick={() => editIssue({ upvotes: upvotes + 1 }, _id)}>
+                <Icon name="chevron up" />
+              </Button>
+              <div className="upvote">{upvotes - downvotes}</div>
+              <Button icon name="downvote" onClick={() => editIssue({ downvotes: downvotes + 1 }, _id)}>
+                <Icon name="chevron down" />
+              </Button>
+            </Feed.Label>
+            <Feed.Content>
+              <Feed.Summary>
+                <Feed.User>{title}</Feed.User>
+              </Feed.Summary>
+              <Feed.Meta>{description}</Feed.Meta>
+            </Feed.Content>
+          </Feed.Event>
+        </Feed>
         <button id="toggle-comment" className="submit" onClick={this.toggleComment}>
           {/* {this.state.isCommenting ? <Comment {...this.props} options={{ toggle: this.toggleComment }} /> : null} */}
           Comment
@@ -85,7 +84,6 @@ class Issue extends Component {
         <button className="submit" onClick={() => deleteIssue(_id)}>
           Delete
         </button>
-
       </div>;
   }
 }

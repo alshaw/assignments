@@ -14,23 +14,21 @@ class IssuesList extends Component {
     let sortedArray = [];
     if (!loading) {
       sortedArray = data.sort((num1, num2) => {
-        let num1Total = num1.upvotes - num1.upvotes;
-        let num2Total = num2.upvotes - num2.upvotes;
-        return num2Total - num1Total;
+        let num1Total = num1.upvotes - num1.downvotes;
+        let num2Total = num2.upvotes - num2.downvotes;
+        return num1Total - num2Total;
       });
     }
-    const issueComponent = data.map((issue, i) => {
+
+    const issueComponent = sortedArray.map((issue, i) => {
       return <Issue key={i} {...issue} />;
     });       
-    // const issueComponent = data
-    //   .map((issue, i) =>
-    //  <Issue {...issue} key={i}></Issue>)
 
-      return (
-        <div className="issue-component">
-          { issueComponent }
-        </div>
-      )
+    return (
+      <div className="issue-component">
+        { issueComponent }
+      </div>
+    )
   }
 }
 
